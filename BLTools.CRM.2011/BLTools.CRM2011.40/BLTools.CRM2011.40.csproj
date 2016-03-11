@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57000BA2-A8AB-4DB6-8D71-59BDD8AEB794}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLTools.CRM2011</RootNamespace>
+    <AssemblyName>BLTools.CRM2011.40</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BLTools.CRM2011.40.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BLTools.CRM2011.40.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk">
+      <HintPath>C:\bin\libs\Microsoft.Crm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>C:\bin\libs\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>C:\bin\libs\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\BLTools.CRM2011.45\crmservicehelper.cs">
+      <Link>crmservicehelper.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\DeviceIdManager.cs">
+      <Link>DeviceIdManager.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\FilterExpressionHelper.cs">
+      <Link>FilterExpressionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\IContact.cs">
+      <Link>Interfaces\IContact.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\ICrmEntity.cs">
+      <Link>Interfaces\ICrmEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\IError.cs">
+      <Link>Interfaces\IError.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\IFatalError.cs">
+      <Link>Interfaces\IFatalError.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\IGroupedOrder.cs">
+      <Link>Interfaces\IGroupedOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\IOrder.cs">
+      <Link>Interfaces\IOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\IOrderDetail.cs">
+      <Link>Interfaces\IOrderDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\IProduct.cs">
+      <Link>Interfaces\IProduct.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\Interfaces\ISystemUser.cs">
+      <Link>Interfaces\ISystemUser.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\TCrmDatabase.cs">
+      <Link>TCrmDatabase.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\TOptionSet.cs">
+      <Link>TOptionSet.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.CRM2011.45\TOptionSetGlobal.cs">
+      <Link>TOptionSetGlobal.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BLTools.CRM2011.40.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BLTools.DataModels.40\BLTools.DataModels.40.csproj">
+      <Project>{fa752d90-61db-487a-a5a2-9ca82c36ffda}</Project>
+      <Name>BLTools.DataModels.40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist c:\bin md c:\bin
+if not exist c:\bin\libs md c:\bin\libs
+if "$(PlatformName)"=="x64" copy "$(TargetPath)" c:\bin\libs\bltools.CRM2011.40.x64.dll
+if "$(PlatformName)"=="x86" copy "$(TargetPath)" c:\bin\libs\bltools.CRM2011.40.x86.dll
+if "$(PlatformName)"=="AnyCPU" copy "$(TargetPath)" c:\bin\libs</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

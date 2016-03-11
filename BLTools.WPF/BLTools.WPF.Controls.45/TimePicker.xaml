@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="BLTools.WPF.Controls.TimePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:bl="clr-namespace:BLTools.WPF.Controls"
+             xmlns:blwpf="clr-namespace:BLTools.WPF;assembly=BLTools.WPF.45"
+             mc:Ignorable="d"
+             d:DesignHeight="100"
+             d:DesignWidth="300"
+             Loaded="UserControl_Loaded"
+             Initialized="UserControl_Initialized">
+
+  <UserControl.Resources>
+    <blwpf:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <blwpf:BoolInverterConverter x:Key="BoolInverterConverter" />
+  </UserControl.Resources>
+  
+  <Border BorderThickness="1"
+          BorderBrush="DarkGray">
+    <Grid Margin="2,1,4,1">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="auto" />
+      </Grid.ColumnDefinitions>
+
+
+      <TextBox Name="txtTime"
+               BorderThickness="0"
+               Height="20"
+               IsReadOnly="{Binding Path=Manual, Converter={StaticResource BoolInverterConverter}}"
+               
+               LostFocus="txtTime_LostFocus"/>
+
+      <StackPanel Grid.Column="1"
+                  Orientation="Horizontal"
+                  Margin="5,0,2,0"
+                  Visibility="{Binding Path=TimeSelector, Converter={StaticResource BoolToVisibilityConverter}}">
+
+        <ComboBox Name="cbTime"
+                  ItemStringFormat="HH:mm"
+                  SelectionChanged="cbTime_SelectionChanged"
+                  Visibility="Collapsed" />
+
+        <Button Height="18"
+                Width="18"
+                Margin="5,0,0,0"
+                Visibility="{Binding Path=TimeSelector, Converter={StaticResource BoolToVisibilityConverter}}"
+                Click="Button_Click">
+          <Image Source="pack://application:,,,/BLTools.WPF.Controls.45;component/Pictures/clock.png"
+                 Stretch="Uniform" />
+        </Button>
+      </StackPanel>
+
+    </Grid>
+  </Border>
+</UserControl>

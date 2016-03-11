@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Database Name="derogation">
+  <Tables>
+    <Table Name="User">
+      <Columns>
+        <Column Name="UserId" DataType="int" IsNullable="false"/>
+        <Column Name="Firstname" DataType="nvarchar" Length="40"/>
+        <Column Name="Lastname" DataType="nvarchar" Length="40"/>
+        <Column Name="Priviledge" DataType="nvarchar" Length="40"/>
+      </Columns>
+      <Indexes>
+        <Index Name="PK_User_UserId" IsPrimaryKey="true" IsUnique="true">
+          <IndexColumns>
+            <IndexColumn Name="UserId"/>
+          </IndexColumns>
+        </Index>
+        <Index Name="IX_User_Name" IsPrimaryKey="false" IsUnique="false">
+          <IndexColumns>
+            <IndexColumn Name="Lastname"/>
+            <IndexColumn Name="Firstname"/>
+          </IndexColumns>
+        </Index>
+      </Indexes>
+    </Table>
+    <Table Name="Request">
+      <Columns>
+        <Column Name="RequestId" DataType="int" IsNullable="false"/>
+        <Column Name="RequesterId" DataType="int"/>
+        <Column Name="DateRequest" DataType="datetime"/>
+        <Column Name="DateCompleted" DataType="datetime"/>
+        <Column Name="RequestType" DataType="int"/>
+        <Column Name="Description" DataType="nvarcharmax"/>
+        <Column Name="TargetUserId" DataType="int"/>
+        <Column Name="StartTime" DataType="int"/>
+        <Column Name="StopTime" DataType="int"/>
+      </Columns>
+      <Indexes>
+        <Index Name="PK_Request_RequestId" IsPrimaryKey="true" IsUnique="true">
+          <IndexColumns>
+            <IndexColumn Name="RequestId"/>
+          </IndexColumns>
+        </Index>
+        <Index Name="IX_Request_RequesterId" IsPrimaryKey="false" IsUnique="false">
+          <IndexColumns>
+            <IndexColumn Name="RequesterId"/>
+            <IndexColumn Name="DateRequest"  SortDirection="Descending"/>
+          </IndexColumns>
+        </Index>
+        <Index Name="IX_Request_DateRequest" IsPrimaryKey="false" IsUnique="false">
+          <IndexColumns>
+            <IndexColumn Name="DateRequest" SortDirection="Descending"/>
+            <IndexColumn Name="RequesterId"/>
+          </IndexColumns>
+        </Index>
+      </Indexes>
+    </Table>
+  </Tables>
+
+</Database>
+

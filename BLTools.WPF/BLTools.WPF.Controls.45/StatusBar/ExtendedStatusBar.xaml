@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="BLTools.WPF.Controls.ExtendedStatusBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+  <StatusBar Grid.Row="2"
+             Height="23"
+             HorizontalAlignment="Stretch"
+             Name="stsMain"
+             VerticalAlignment="Bottom"
+             BorderBrush="Black"
+             BorderThickness="0.1">
+    <StatusBar.ItemsPanel>
+      <ItemsPanelTemplate>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="4*" />
+          </Grid.ColumnDefinitions>
+        </Grid>
+      </ItemsPanelTemplate>
+    </StatusBar.ItemsPanel>
+
+    <StatusBarItem Name="stsStatus"
+                   Grid.Column="0">
+      <TextBlock Name="txtStatusBarLeft"
+                 HorizontalAlignment="Left"
+                 Text="{Binding Path=LeftText}" />
+    </StatusBarItem>
+
+    <Separator Grid.Column="1" />
+
+    <StatusBarItem Name="stsStatus2"
+                   Grid.Column="2"
+                   HorizontalAlignment="Stretch"
+                   HorizontalContentAlignment="Stretch">
+      <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="5*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"
+                   Name="txtStatusBarRight"
+                   Margin="5,0,5,0" />
+        <ProgressBar Grid.Column="1"
+                     Margin="5,0,5,0"
+                     Name="pbStatus"
+                     HorizontalAlignment="Stretch"
+                     Visibility="Collapsed"
+                     Minimum="{Binding Path=ProgressBarMinValue}"
+                     Maximum="{Binding Path=ProgressBarMaxValue}"
+                     Value="{Binding Path=ProgressBarValue}"/>
+      </Grid>
+
+    </StatusBarItem>
+
+  </StatusBar>
+</UserControl>

@@ -1,0 +1,63 @@
+﻿<Window x:Class="GoogleDirectionTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+  <Grid>
+    <StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Origine :</TextBlock>
+        <TextBox Name="txtOrigin"></TextBox>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint1"></TextBox>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint2"></TextBox>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint3"></TextBox>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint4"></TextBox>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint5"></TextBox>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint6"></TextBox>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint7"></TextBox>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint8"></TextBox>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Passant par :</TextBlock>
+        <TextBox Name="txtWayPoint9"></TextBox>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Margin="0,0,10,0">Destination :</TextBlock>
+        <TextBox Name="txtDestination"></TextBox>
+      </StackPanel>
+      
+      <Button Name="btnStart"
+              Click="btnStart_Click">Start</Button>
+      <TextBlock Name="txtResult"></TextBlock>
+    </StackPanel>
+  </Grid>
+</Window>

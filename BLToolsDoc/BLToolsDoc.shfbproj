@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which assemblies to include from solution and
+				 project documentation sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80171651-d16b-41bb-86b9-98669c864324}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.9.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
+    <OutputPath>.\Help\</OutputPath>
+    <HtmlHelpName>BLToolsLibraries</HtmlHelpName>
+    <Language>en-US</Language>
+    <BuildAssemblerVerbosity>OnlyErrors</BuildAssemblerVerbosity>
+    <HelpFileFormat>MSHelpViewer</HelpFileFormat>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <CleanIntermediates>True</CleanIntermediates>
+    <CatalogName>VisualStudio12</CatalogName>
+    <TocParentId>-1</TocParentId>
+    <TocParentVersion>100</TocParentVersion>
+    <TopicVersion>100</TopicVersion>
+    <TocOrder>-1</TocOrder>
+    <MSHelpViewerSdkLinkType>Msdn</MSHelpViewerSdkLinkType>
+    <CatalogVersion>100</CatalogVersion>
+    <CatalogProductId>VS</CatalogProductId>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\BLTools\BLTools.40\BLTools.40.csproj" />
+      <DocumentationSource sourceFile="..\BLTools\BLTools.45\BLTools.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.AD\BLTools.AD.45\BLTools.AD.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.ADS\BLTools.ADS.40\BLTools.ADS.40.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.ADS\BLTools.ADS.45\BLTools.ADS.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.CRM.2011\BLTools.CRM2011.40\BLTools.CRM2011.40.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.CRM.2011\BLTools.CRM2011.45\BLTools.CRM2011.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.Data\BLTools.Data.40\BLTools.Data.40.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.Data\BLTools.Data.45\BLTools.Data.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.DataModels\BLTools.DataModels.45\BLTools.DataModels.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.Forms\BLTools.Forms.45\BLTools.Forms.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.Google.Apis\BLTools.Google.Apis.45\BLTools.Google.Apis.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.Reports\BLTools.Reports.40\BLTools.Reports.40.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.Reports\BLTools.Reports.45\BLTools.Reports.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.SQL\BLTools.SQL.40\BLTools.SQL.40.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.SQL\BLTools.SQL.45\BLTools.SQL.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.Web\BLTools.Web.45\BLTools.Web.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.WPF\BLTools.WPF.40\BLTools.WPF.40.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.WPF\BLTools.WPF.45\BLTools.WPF.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.WPF\BLTools.WPF.Controls.45\BLTools.WPF.Controls.45.csproj" />
+      <DocumentationSource sourceFile="..\BLTools.XML.45\BLTools.XML.45.csproj" />
+    </DocumentationSources>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <NamespaceGrouping>True</NamespaceGrouping>
+    <SyntaxFilters>C#, Visual Basic, XAML Usage, ASP.NET</SyntaxFilters>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <Preliminary>False</Preliminary>
+    <NamingMethod>Guid</NamingMethod>
+    <HelpTitle>BLTools libraries</HelpTitle>
+    <CopyrightText>%28c%29 2015 Luc Bolly</CopyrightText>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <ProductTitle>BLTools</ProductTitle>
+    <VendorName>Luc Bolly</VendorName>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="BLTools" isDocumented="True" xmlns="">Generic tools</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="BLTools.ConsoleExtension" isDocumented="True" xmlns="">Extension to the console</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="BLTools.Debugging" isDocumented="True" xmlns="">Debugging help</NamespaceSummaryItem>
+    </NamespaceSummaries>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <ComponentConfigurations>
+      <ComponentConfig id="Syntax Component" enabled="True" xmlns="">
+        <component id="Syntax Component">
+  <syntax input="/document/reference" output="/document/syntax" renderReferenceLinks="false" />
+  <generators>
+    {@SyntaxFilters}
+</generators>
+  <containerElement name="codeSnippetGroup" addNoExampleTabs="true" includeOnSingleSnippets="false" groupingEnabled="{@CodeSnippetGrouping}" />
+  <configurations>
+    <generator id="C#" />
+    <generator id="Visual Basic">
+      <includeLineContinuation value="false" />
+    </generator>
+    <generator id="Visual Basic Usage">
+      <includeLineContinuation value="false" />
+    </generator>
+    <generator id="Managed C++" />
+    <generator id="F#" />
+    <generator id="J#" />
+    <generator id="JScript" />
+    <generator id="JavaScript" />
+    <generator id="XAML Usage" />
+    <generator id="ASP.NET" />
+  </configurations>
+</component>
+      </ComponentConfig>
+    </ComponentConfigurations>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
+			 the build.  The others are optional common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

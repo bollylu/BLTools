@@ -1,0 +1,56 @@
+﻿<Window x:Class="GenerateKeyPair.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Generate Key Pair" Height="418" Width="726" Loaded="Window_Loaded">
+  <Grid>
+    <TabControl>
+      <TabItem Name="tabKeygen" Header="Key pair generation">
+        <Grid>
+          <Label Height="28" HorizontalAlignment="Left" Margin="6,15.52,0,0" Name="label1" VerticalAlignment="Top" Width="149">Length of the key (in bits)</Label>
+          <ComboBox Height="23" HorizontalAlignment="Left" Margin="167,17,0,0" Name="cbKeyLength" VerticalAlignment="Top" Width="83" HorizontalContentAlignment="Right">
+            <ComboBoxItem>512</ComboBoxItem>
+            <ComboBoxItem>768</ComboBoxItem>
+            <ComboBoxItem Selector.IsSelected="True">1024</ComboBoxItem>
+            <ComboBoxItem>1536</ComboBoxItem>
+            <ComboBoxItem>2048</ComboBoxItem>
+            <ComboBoxItem>4096</ComboBoxItem>
+          </ComboBox>
+          <Button Height="23" HorizontalAlignment="Right" Margin="0,17,12,0" Name="btnGenerate" VerticalAlignment="Top" Width="75" Click="btnGenerate_Click">Generate</Button>
+          <GroupBox Header="Public key" Height="120" Margin="12,55,12,0" Name="grpPublic" VerticalAlignment="Top">
+            <ScrollViewer>
+              <TextBlock Name="txtPublicKey" TextWrapping="Wrap" Focusable="True"></TextBlock>
+            </ScrollViewer>
+          </GroupBox>
+          <GroupBox Header="Private Key" Margin="12,181,12,68" Name="grpPrivate" Height="120">
+            <ScrollViewer>
+              <TextBlock Name="txtPrivateKey" TextWrapping="Wrap" Focusable="True"></TextBlock>
+            </ScrollViewer>
+          </GroupBox>
+          <Button Height="23" HorizontalAlignment="Right" Margin="0,0,12,6" Name="btnNext" VerticalAlignment="Bottom" Width="75" Click="btnNext_Click">
+            Next &gt;&gt;
+          </Button>
+          <CheckBox Height="16" Margin="292.698,20.52,280.881,0" Name="chkEncrypt" VerticalAlignment="Top" Checked="chkEncrypt_Checked" Unchecked="chkEncrypt_Unchecked">Encrypt data</CheckBox>
+        </Grid>
+      </TabItem>
+      <TabItem Name="tabKeysave" Header="Save to file" GotFocus="tabKeysave_GotFocus">
+        <Grid>
+          <Button Height="23" HorizontalAlignment="Left" Margin="114,0,0,6" Name="btnSavePrivate" VerticalAlignment="Bottom" Width="75" Click="btnSavePrivate_Click">Save private</Button>
+          <Button Height="23" HorizontalAlignment="Left" Margin="207,0,0,6" Name="btnSavePublic" VerticalAlignment="Bottom" Width="75" Click="btnSavePublic_Click">Save public</Button>
+          <Button Height="23" HorizontalAlignment="Left" Margin="302,0,317.241,6" Name="btnSavePrivatePublic" VerticalAlignment="Bottom" Click="btnSavePrivatePublic_Click">Save both</Button>
+          <Button Height="23" HorizontalAlignment="Left" Margin="6,0,0,6" Name="btnPrevious" VerticalAlignment="Bottom" Width="75" Click="btnPrevious_Click">&lt;&lt; Previous</Button>
+          <Label Height="28" HorizontalAlignment="Left" Margin="10.908,10.726,0,0" Name="label2" VerticalAlignment="Top" Width="92.718">Key file prefix</Label>
+          <Label Height="28" HorizontalAlignment="Left" Margin="10.908,39.814,0,0" Name="label3" VerticalAlignment="Top" Width="120">Private key container</Label>
+          <Label Height="28" HorizontalAlignment="Left" Margin="10.908,68.902,0,0" Name="label4" VerticalAlignment="Top" Width="120">Public key container</Label>
+          <TextBox Height="23" Margin="143.622,12.726,0,0" Name="txtPrefix" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128.169" TextChanged="txtPrefix_TextChanged" />
+          <TextBox Height="23" Margin="143.622,41.814,301.484,0" Name="txtPrivateContainer" VerticalAlignment="Top" BorderThickness="0" IsReadOnly="True" />
+          <TextBox Height="23" Margin="143.622,70.902,301.484,0" Name="txtPublicContainer" VerticalAlignment="Top" BorderThickness="0" IsReadOnly="True" />
+          <Label Height="28" HorizontalAlignment="Left" Margin="10.908,97.99,0,0" Name="label5" VerticalAlignment="Top" Width="120">Storage location</Label>
+          <TextBox Height="23" Margin="143.622,99.99,59.994,0" Name="txtStorageLocation" VerticalAlignment="Top" TextChanged="txtStorageLocation_TextChanged" />
+          <Button Height="23" HorizontalAlignment="Right" Margin="0,99.47,28.681,0" Name="btnGetStorageLocation" VerticalAlignment="Top" Width="25" Click="btnGetStorageLocation_Click">...</Button>
+          <Button Height="23" HorizontalAlignment="Right" Margin="0,0,5.998,6" Name="btnQuit" VerticalAlignment="Bottom" Width="75" Click="btnQuit_Click">Quit</Button>
+        </Grid>
+      </TabItem>
+    </TabControl>
+
+  </Grid>
+</Window>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6B54798-3F0A-4AF0-9244-E4F1AEB5C9E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitTest2015</RootNamespace>
+    <AssemblyName>UnitTest2015</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Data models\ComplexType\TCountryTest.cs" />
+    <Compile Include="Data models\ComplexType\TLanguageTest.cs" />
+    <Compile Include="Data models\ComplexType\TPersonNameTest.cs" />
+    <Compile Include="Data models\ComplexType\TPersonTitleTest.cs" />
+    <Compile Include="Data models\ComplexType\TPhoneNumberTest.cs" />
+    <Compile Include="Data\FixedLengthRecordTest.cs" />
+    <Compile Include="Data\ReaderExtensionTest.cs" />
+    <Compile Include="Data\TFixedLengthTestRecord.cs" />
+    <Compile Include="Data\XElementExtensionTest.cs" />
+    <Compile Include="Security\Asymmetric encryption\TRSACryptographyExtensionTest.cs" />
+    <Compile Include="Security\Asymmetric encryption\TRSAEncryptorTest.cs" />
+    <Compile Include="Security\Asymmetric encryption\TRSAKeyPairTest.cs" />
+    <Compile Include="Security\Asymmetric encryption\TRSAPrivateKeyTest.cs" />
+    <Compile Include="Security\Asymmetric encryption\TRSAPublicKeyTest.cs" />
+    <Compile Include="Security\Hashing\THashingStringExtensionTest.cs" />
+    <Compile Include="Security\Hashing\THMACTest.cs" />
+    <Compile Include="Security\Symmetric encryption\SymmetricEncryptionRC2Test.cs" />
+    <Compile Include="Security\Symmetric encryption\TSymmetricEncryption3DesTest.cs" />
+    <Compile Include="Security\Symmetric encryption\TSymmetricEncryptionAesTest.cs" />
+    <Compile Include="Security\Symmetric encryption\TSymmetricEncryptionDesTest.cs" />
+    <Compile Include="Security\Symmetric encryption\TSymmetricEncryptionRijndaelTest.cs" />
+    <Compile Include="Security\TSecurityMemoryControllerTest.cs" />
+    <Compile Include="Security\TSymmetricSecurityExtensionTest.cs" />
+    <Compile Include="Security\TSymmetricSecurityKeysTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ArgElementTest.cs" />
+    <Compile Include="Utils\ByteArrayExtensionTest.cs" />
+    <Compile Include="Utils\DateTimeExtensionTest.cs" />
+    <Compile Include="Utils\IPAddressExtensionTest.cs" />
+    <Compile Include="Utils\SplitArgsTest.cs" />
+    <Compile Include="Utils\StringExtensionBuilderTest.cs" />
+    <Compile Include="Utils\StringExtensionTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLTools.DataModels\BLTools.DataModels.45\BLTools.DataModels.45.csproj">
+      <Project>{99b93eb7-4d9c-42b8-8fe8-aac974539305}</Project>
+      <Name>BLTools.DataModels.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLTools.Data\BLTools.Data.45\BLTools.Data.45.csproj">
+      <Project>{eb8caf4d-21ce-4b23-a3a6-931cb3b49054}</Project>
+      <Name>BLTools.Data.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLTools\BLTools.45\BLTools.45.csproj">
+      <Project>{8386db52-3b96-4b57-a008-876c8722715d}</Project>
+      <Name>BLTools.45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

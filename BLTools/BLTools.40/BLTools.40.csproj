@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AABBD409-6F16-483C-9F96-308AFF22E377}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLTools</RootNamespace>
+    <AssemblyName>BLTools.40</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BLTools.40.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86 debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86 debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64 debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64 debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NET40</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86 debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\x86 debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64 debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\x64 debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NET40</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x86 debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\x86 debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64 debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\x64 debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>bltools.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\BLTools.45\BLConverter.cs">
+      <Link>BLConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\ConsoleExtension\EInputValidation.cs">
+      <Link>ConsoleExtension\EInputValidation.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\ConsoleExtension\EInputYesNo.cs">
+      <Link>ConsoleExtension\EInputYesNo.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\ConsoleExtension\Input.cs">
+      <Link>ConsoleExtension\Input.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\ConsoleExtension\InputList.cs">
+      <Link>ConsoleExtension\InputList.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\ConsoleExtension\InputYesNo.cs">
+      <Link>ConsoleExtension\InputYesNo.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\ConsoleExtension\Pause.cs">
+      <Link>ConsoleExtension\Pause.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Debugging\ApplicationInfo.cs">
+      <Link>Debugging\ApplicationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Debugging\DebugHelper_UserAdmin.cs">
+      <Link>Debugging\DebugHelper_UserAdmin.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Debugging\TraceFactory.cs">
+      <Link>Debugging\TraceFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\BoolAndMessageEventArgs.cs">
+      <Link>EventArgs\BoolAndMessageEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\BoolEventArgs.cs">
+      <Link>EventArgs\BoolEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\DoubleEventArgs.cs">
+      <Link>EventArgs\DoubleEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\IntAndMessageEventArgs.cs">
+      <Link>EventArgs\IntAndMessageEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\IntEventArgs.cs">
+      <Link>EventArgs\IntEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\ObjectEventArgs.cs">
+      <Link>EventArgs\ObjectEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\PercentageEventArgs.cs">
+      <Link>EventArgs\PercentageEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\EventArgs\StringEventArgs.cs">
+      <Link>EventArgs\StringEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\ByteArrayExtension.cs">
+      <Link>Extension methods\ByteArrayExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\CharExtension.cs">
+      <Link>Extension methods\CharExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\DateTimeExtension.cs">
+      <Link>Extension methods\DateTimeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\FileInfoExtension.cs">
+      <Link>Extension methods\FileInfoExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\IPAddressExtension.cs">
+      <Link>Extension methods\IPAddressExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\PropertyInfoExtension.cs">
+      <Link>Extension methods\PropertyInfoExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\SecureStringExtension.cs">
+      <Link>Extension methods\SecureStringExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\StringBuilderExtension.cs">
+      <Link>Extension methods\StringBuilderExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\StringExtension.cs">
+      <Link>Extension methods\StringExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Extension methods\XElementExtension.cs">
+      <Link>Extension methods\XElementExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\FileManagement\ExtendedFileVersionInfo.cs">
+      <Link>FileManagement\ExtendedFileVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\FileManagement\FileManager.cs">
+      <Link>FileManagement\FileManager.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Hardware\CheckPC.cs">
+      <Link>Hardware\CheckPC.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Hardware\Disk.cs">
+      <Link>Hardware\Disk.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Hardware\WMI.cs">
+      <Link>Hardware\WMI.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\IToXml.cs">
+      <Link>IToXml.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityController.cs">
+      <Link>Security\Authorization\TSecurityController.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityGroup.cs">
+      <Link>Security\Authorization\TSecurityGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityGroupCollection.cs">
+      <Link>Security\Authorization\TSecurityGroupCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityStorage.cs">
+      <Link>Security\Authorization\TSecurityStorage.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityStorageSql.cs">
+      <Link>Security\Authorization\TSecurityStorageSql.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityStorageXml.cs">
+      <Link>Security\Authorization\TSecurityStorageXml.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityUser.cs">
+      <Link>Security\Authorization\TSecurityUser.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityUserCollection.cs">
+      <Link>Security\Authorization\TSecurityUserCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Authorization\TSecurityUserIdCollection.cs">
+      <Link>Security\Authorization\TSecurityUserIdCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Asymmetric\TAsymmetricEncryptionAlgorithm.cs">
+      <Link>Security\Encryption\Asymmetric\TAsymmetricEncryptionAlgorithm.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Asymmetric\TRSACryptographyExtension.cs">
+      <Link>Security\Encryption\Asymmetric\TRSACryptographyExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Asymmetric\TRSAEncryptor.cs">
+      <Link>Security\Encryption\Asymmetric\TRSAEncryptor.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Asymmetric\TRSAKeyPair.cs">
+      <Link>Security\Encryption\Asymmetric\TRSAKeyPair.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Asymmetric\TRSAPrivateKey.cs">
+      <Link>Security\Encryption\Asymmetric\TRSAPrivateKey.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Asymmetric\TRSAPublicKey.cs">
+      <Link>Security\Encryption\Asymmetric\TRSAPublicKey.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Symmetric\TPIV.cs">
+      <Link>Security\Encryption\Symmetric\TPIV.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Symmetric\TSymmetricDecryption.cs">
+      <Link>Security\Encryption\Symmetric\TSymmetricDecryption.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Symmetric\TSymmetricEncryption.cs">
+      <Link>Security\Encryption\Symmetric\TSymmetricEncryption.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Symmetric\TSymmetricEncryptionAlgorithm.cs">
+      <Link>Security\Encryption\Symmetric\TSymmetricEncryptionAlgorithm.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Encryption\Symmetric\TSymmetricUtils.cs">
+      <Link>Security\Encryption\Symmetric\TSymmetricUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Security\Hashing\StringExtensions.cs">
+      <Link>Security\Hashing\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\SplitArgs\ArgElement.cs">
+      <Link>SplitArgs\ArgElement.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\SplitArgs\SplitArgs.cs">
+      <Link>SplitArgs\SplitArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TChrono.cs">
+      <Link>TChrono.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\Text\TextBox.cs">
+      <Link>Text\TextBox.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TraceListeners\Log.cs">
+      <Link>TraceListeners\Log.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TraceListeners\NullTraceListener.cs">
+      <Link>TraceListeners\NullTraceListener.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TraceListeners\Severity.cs">
+      <Link>TraceListeners\Severity.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TraceListeners\SyslogTraceListener.cs">
+      <Link>TraceListeners\SyslogTraceListener.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TraceListeners\TExtendedTraceListener.cs">
+      <Link>TraceListeners\TExtendedTraceListener.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TraceListeners\TimeStampTextWriterTraceListener.cs">
+      <Link>TraceListeners\TimeStampTextWriterTraceListener.cs</Link>
+    </Compile>
+    <Compile Include="..\BLTools.45\TraceListeners\TimeStampTraceListener.cs">
+      <Link>TraceListeners\TimeStampTraceListener.cs</Link>
+    </Compile>
+    <Compile Include="Async\Async.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bltools.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist c:\bin md c:\bin
+if not exist c:\bin\libs md c:\bin\libs
+if "$(PlatformName)"=="x64" copy "$(TargetPath)" "c:\bin\libs\BLTools.40.x64.dll"
+if "$(PlatformName)"=="x86" copy "$(TargetPath)" "c:\bin\libs\BLTools.40.x86.dll"
+if "$(PlatformName)"=="AnyCPU" copy "$(TargetPath)" c:\bin\libs</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

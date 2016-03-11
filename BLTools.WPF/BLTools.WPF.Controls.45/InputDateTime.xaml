@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="BLTools.WPF.Controls.InputDateTime"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:bl="clr-namespace:BLTools.WPF.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="100"
+             d:DesignWidth="300"
+             Loaded="UserControl_Loaded"
+             Initialized="UserControl_Initialized">
+  <Grid>
+    <Grid Name="LabelOnLeft">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="{Binding Path=FieldWidth, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Label Grid.Column="0"
+             Name="InputLabel"
+             Margin="0,10,10,0"
+             Width="auto"
+             Content="{Binding Path=Header, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}">
+      </Label>
+
+      <StackPanel Grid.Column="1">
+        <DatePicker Name="InputValue"
+                    Margin="0,0,0,0"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    SelectedDate="{Binding Path=DateValue, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                    Visibility="{Binding Path=DateVisibility, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}" />
+
+        <bl:TimePicker x:Name="InputValueTime"
+                       Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       Value="{Binding Path=TimeValue, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       MinValue="{Binding Path=MinValue, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       MaxValue="{Binding Path=MaxValue, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       Step="{Binding Path=Step, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       Visibility="{Binding Path=TimeVisibility, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}" />
+      </StackPanel>
+    </Grid>
+
+    <Grid Name="LabelOnTop"
+          Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Label Grid.Row="0"
+             Name="InputLabelTop"
+             Margin="10,0,10,0"
+             Width="auto"
+             Content="{Binding Path=Header, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}">
+
+      </Label>
+      <StackPanel Grid.Row="1">
+        <DatePicker Name="InputValueTop"
+                    Margin="10,5,10,0"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    SelectedDate="{Binding Path=DateValue, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                    Visibility="{Binding Path=DateVisibility, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}" 
+                    />
+
+        <bl:TimePicker x:Name="InputValueTimeTop"
+                       Margin="10,5,10,0"
+                       VerticalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       Value="{Binding Path=TimeValue, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       MinValue="{Binding Path=MinValue, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       MaxValue="{Binding Path=MaxValue, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       Step="{Binding Path=Step, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       Visibility="{Binding Path=TimeVisibility, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       TimeSelector="{Binding Path=TimeSelector, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       IsMandatory="{Binding Path=IsTimeMandatory, RelativeSource={RelativeSource AncestorType={x:Type bl:InputDateTime}}}"
+                       Manual="False"/>
+      </StackPanel>
+    </Grid>
+  </Grid>
+</UserControl>

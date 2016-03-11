@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB8CAF4D-21CE-4B23-A3A6-931CB3B49054}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLTools.Data</RootNamespace>
+    <AssemblyName>BLTools.Data.45</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\BLTools.Data.45.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>bltools.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Csv\TCsvColumn.cs" />
+    <Compile Include="Csv\TCsvDataFile - Generic.cs" />
+    <Compile Include="Csv\TCsvDataFile.cs" />
+    <Compile Include="Csv\TCsvRecord - Generic.cs" />
+    <Compile Include="Csv\TCsvRecord.cs" />
+    <Compile Include="Csv\TCsvDataFieldAttribute.cs" />
+    <Compile Include="Enums\EBoolFormat.cs" />
+    <Compile Include="Enums\EDateTimeFormat.cs" />
+    <Compile Include="Enums\EOpenMode.cs" />
+    <Compile Include="Interfaces\IFixedLengthRecord.cs" />
+    <Compile Include="FixedLength\TFixedLengthDataFileMRT.cs" />
+    <Compile Include="FixedLength\TFixedLengthDataFile.cs" />
+    <None Include="FixedLength\Support\Export.cs" />
+    <None Include="FixedLength\Support\FileManager.cs" />
+    <None Include="FixedLength\Support\InputFile.cs" />
+    <None Include="FixedLength\Support\InputLine.cs" />
+    <None Include="FixedLength\Support\LineDescription.cs" />
+    <None Include="FixedLength\Support\Parts.cs" />
+    <None Include="FixedLength\Support\PrezziRicambi.cs" />
+    <Compile Include="FixedLength\TDataFieldAttribute.cs" />
+    <Compile Include="FixedLength\TFixedLengthRecord.cs" />
+    <None Include="FixedLength\Support\TFixedLengthSchema.cs" />
+    <Compile Include="Interfaces\IDatabase.cs" />
+    <Compile Include="Interfaces\IDataProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderExtension.cs" />
+    <Compile Include="SqlMaker.cs" />
+    <Compile Include="TRecordCache.cs" />
+    <Compile Include="TRecordCacheExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BLTools\BLTools.45\BLTools.45.csproj">
+      <Project>{8386db52-3b96-4b57-a008-876c8722715d}</Project>
+      <Name>BLTools.45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bltools.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if not exist c:\bin md c:\bin
+if not exist c:\bin\libs md c:\bin\libs
+if "$(PlatformName)"=="x64" copy "$(TargetPath)" "c:\bin\libs\BLTools.Data.45.x64.dll"
+if "$(PlatformName)"=="x86" copy "$(TargetPath)" "c:\bin\libs\BLTools.Data.45.x86.dll"
+if "$(PlatformName)"=="AnyCPU" copy "$(TargetPath)" c:\bin\libs</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
