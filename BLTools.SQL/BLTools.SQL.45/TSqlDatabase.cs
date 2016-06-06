@@ -30,11 +30,11 @@ namespace BLTools.SQL {
     #endregion Constants for connection string
 
     #region Default values
-    public static string DefaultServerName = "(local)";
-    public static string DefaultDatabaseName = "master";
-    public static string DefaultUserName = "";
-    public static string DefaultPassword = "";
-    public static bool DefaultUseIntegratedSecurity = true;
+    public static string DEFAULT_SERVERNAME = "(local)";
+    public static string DEFAULT_DATABASENAME = "master";
+    public static string DEFAULT_USERNAME = "";
+    public static string DEFAULT_PASSWORD = "";
+    public static bool DEFAULT_USE_INTEGRATED_SECURITY = true;
 
     /// <summary>
     /// This value will be used later to set UsePooledConnections when no specific value is passed
@@ -59,7 +59,7 @@ namespace BLTools.SQL {
     /// <summary>
     /// Name of the database
     /// </summary>
-    public string Name {
+    public virtual string Name {
       get {
         return string.Format("{0}:{1}", ServerName ?? "", DatabaseName ?? "");
       }
@@ -67,7 +67,7 @@ namespace BLTools.SQL {
     /// <summary>
     /// Indicate whether the connection is opened or not
     /// </summary>
-    public bool IsOpened {
+    public virtual bool IsOpened {
       get {
         if (Connection != null) {
           return Connection.State == ConnectionState.Open;
@@ -85,7 +85,7 @@ namespace BLTools.SQL {
     /// <summary>
     /// Returns a new SMO connection based on the current server and database parameters
     /// </summary>
-    public ServerConnection SmoConnection {
+    public virtual ServerConnection SmoConnection {
       get {
         return new ServerConnection(new SqlConnection(ConnectionString));
       }
@@ -96,7 +96,7 @@ namespace BLTools.SQL {
     /// The timeout when trying to connect to the database (in seconds)
     /// </summary>
     /// <remarks>Max value is 1000. If 0, then 300.</remarks>
-    public int ConnectionTimeout {
+    public virtual int ConnectionTimeout {
       get {
         return _ConnectionTimeout;
       }
@@ -123,10 +123,10 @@ namespace BLTools.SQL {
     /// <summary>
     /// Current Database server name
     /// </summary>
-    public string ServerName {
+    public virtual string ServerName {
       get {
         if (string.IsNullOrEmpty(_ServerName)) {
-          return DefaultServerName;
+          return DEFAULT_SERVERNAME;
         } else {
           return _ServerName;
         }
@@ -139,10 +139,10 @@ namespace BLTools.SQL {
     /// <summary>
     /// current database name
     /// </summary>
-    public string DatabaseName {
+    public virtual string DatabaseName {
       get {
         if (string.IsNullOrEmpty(_DatabaseName)) {
-          return DefaultDatabaseName;
+          return DEFAULT_DATABASENAME;
         } else {
           return _DatabaseName;
         }
@@ -155,7 +155,7 @@ namespace BLTools.SQL {
     /// <summary>
     /// Current user name (SQL identification)
     /// </summary>
-    public string UserName {
+    public virtual string UserName {
       get {
 
         return _UserName ?? "";
@@ -168,7 +168,7 @@ namespace BLTools.SQL {
     /// <summary>
     /// Current user password (SQL identification)
     /// </summary>
-    public string Password {
+    public virtual string Password {
       get {
         return _Password ?? "";
 
@@ -178,7 +178,7 @@ namespace BLTools.SQL {
       }
     }
 
-    public bool UseIntegratedSecurity {
+    public virtual bool UseIntegratedSecurity {
       get {
         return _UseIntegratedSecurity;
 
@@ -191,7 +191,7 @@ namespace BLTools.SQL {
     /// <summary>
     /// Obtain the connection string based on current properties of the object
     /// </summary>
-    public string ConnectionString {
+    public virtual string ConnectionString {
       get {
         SqlConnectionStringBuilder ConnectionBuilder = new SqlConnectionStringBuilder();
         ConnectionBuilder.DataSource = ServerName;
@@ -229,7 +229,7 @@ namespace BLTools.SQL {
     /// Builds a database object based on default values
     /// </summary>
     public TSqlDatabase(bool integratedSecurity = false)
-      : this(DefaultServerName, DefaultDatabaseName, DefaultUserName, DefaultPassword) {
+      : this(DEFAULT_SERVERNAME, DEFAULT_DATABASENAME, DEFAULT_USERNAME, DEFAULT_PASSWORD) {
       UseIntegratedSecurity = integratedSecurity;
       if (UseIntegratedSecurity) {
         UserName = "";
@@ -249,7 +249,7 @@ namespace BLTools.SQL {
     /// <param name="serverName">Name of the server to connect (SERVER or SERVER\INSTANCE). Use "(local)" for server on local machine</param>
     /// <param name="databaseName">Name of the database to open</param>
     public TSqlDatabase(string serverName, string databaseName, bool integratedSecurity = false)
-      : this(serverName, databaseName, DefaultUserName, DefaultPassword) {
+      : this(serverName, databaseName, DEFAULT_USERNAME, DEFAULT_PASSWORD) {
       UseIntegratedSecurity = integratedSecurity;
       if (UseIntegratedSecurity) {
         UserName = "";
@@ -1216,11 +1216,11 @@ namespace BLTools.SQL {
         }
       }
 
-      AddDefaultKeyValue(RetVal, CS_SERVERNAME, DefaultServerName);
-      AddDefaultKeyValue(RetVal, CS_DATABASENAME, DefaultDatabaseName);
-      AddDefaultKeyValue(RetVal, CS_USERID, DefaultUserName);
-      AddDefaultKeyValue(RetVal, CS_USERNAME, DefaultUserName);
-      AddDefaultKeyValue(RetVal, CS_PASSWORD, DefaultPassword);
+      AddDefaultKeyValue(RetVal, CS_SERVERNAME, DEFAULT_SERVERNAME);
+      AddDefaultKeyValue(RetVal, CS_DATABASENAME, DEFAULT_DATABASENAME);
+      AddDefaultKeyValue(RetVal, CS_USERID, DEFAULT_USERNAME);
+      AddDefaultKeyValue(RetVal, CS_USERNAME, DEFAULT_USERNAME);
+      AddDefaultKeyValue(RetVal, CS_PASSWORD, DEFAULT_PASSWORD);
       AddDefaultKeyValue(RetVal, CS_USE_MARS, "true");
 
       return RetVal;

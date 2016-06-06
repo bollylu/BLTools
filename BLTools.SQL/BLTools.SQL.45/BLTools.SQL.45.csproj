@@ -258,7 +258,9 @@
 if not exist c:\bin\libs md c:\bin\libs
 if "$(PlatformName)"=="x64" copy "$(TargetPath)" "c:\bin\libs\BLTools.SQL.45.x64.dll"
 if "$(PlatformName)"=="x86" copy "$(TargetPath)" "c:\bin\libs\BLTools.SQL.45.x86.dll"
-if "$(PlatformName)"=="AnyCPU" copy "$(TargetPath)" c:\bin\libs</PostBuildEvent>
+if "$(PlatformName)"=="AnyCPU" copy "$(TargetPath)" c:\bin\libs
+pushd "$(ProjectDir)"
+nuget pack "$(ProjectFileName)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
