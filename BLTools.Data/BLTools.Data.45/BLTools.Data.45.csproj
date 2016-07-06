@@ -62,6 +62,7 @@
     <Compile Include="Enums\EBoolFormat.cs" />
     <Compile Include="Enums\EDateTimeFormat.cs" />
     <Compile Include="Enums\EOpenMode.cs" />
+    <Compile Include="Interfaces\IDatabaseManagement.cs" />
     <Compile Include="Interfaces\IFixedLengthRecord.cs" />
     <Compile Include="FixedLength\TFixedLengthDataFileMRT.cs" />
     <Compile Include="FixedLength\TFixedLengthDataFile.cs" />

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 
-namespace BLTools.SQL {
+namespace BLTools.SQL.Management {
   public class TSqlServer : IDisposable {
 
     #region Default values

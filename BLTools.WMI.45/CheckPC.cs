@@ -10,7 +10,7 @@ using System.Text;
 using System.Management.Instrumentation;
 using System.Collections.ObjectModel;
 
-namespace BLTools.Hardware {
+namespace BLTools.WMI {
 
   public class MachineComponents {
 

@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace BLTools.Hardware {
+namespace BLTools.WMI {
   
   public class Disk {
 

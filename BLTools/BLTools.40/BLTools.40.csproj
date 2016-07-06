@@ -232,15 +232,6 @@
     <Compile Include="..\BLTools.45\FileManagement\FileManager.cs">
       <Link>FileManagement\FileManager.cs</Link>
     </Compile>
-    <Compile Include="..\BLTools.45\Hardware\CheckPC.cs">
-      <Link>Hardware\CheckPC.cs</Link>
-    </Compile>
-    <Compile Include="..\BLTools.45\Hardware\Disk.cs">
-      <Link>Hardware\Disk.cs</Link>
-    </Compile>
-    <Compile Include="..\BLTools.45\Hardware\WMI.cs">
-      <Link>Hardware\WMI.cs</Link>
-    </Compile>
     <Compile Include="..\BLTools.45\IToXml.cs">
       <Link>IToXml.cs</Link>
     </Compile>

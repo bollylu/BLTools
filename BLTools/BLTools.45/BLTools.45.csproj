@@ -168,8 +168,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Management" />
-    <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -211,9 +209,6 @@
     <Compile Include="Extension methods\IPAddressExtension.cs" />
     <Compile Include="Extension methods\StringExtension.cs" />
     <Compile Include="FileManagement\FileManager.cs" />
-    <Compile Include="Hardware\CheckPC.cs" />
-    <Compile Include="Hardware\Disk.cs" />
-    <Compile Include="Hardware\WMI.cs" />
     <Compile Include="IToXml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Authorization\TSecurityGroup.cs" />

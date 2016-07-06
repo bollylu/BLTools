@@ -163,27 +163,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Dmf, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -198,25 +177,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Schema\SqlForeignKeyColumn.cs" />
-    <Compile Include="EventArgs\SchemaTableCreatedEventArgs.cs" />
-    <Compile Include="Schema\SqlColumn.cs" />
-    <Compile Include="Schema\SqlColumnCollection.cs" />
-    <Compile Include="Schema\SqlConstraint.cs" />
-    <Compile Include="Schema\SqlConstraintCollection.cs" />
-    <Compile Include="TSqlDatabase.cs" />
+    <Compile Include="TSqlDatabase\TSqlDatabase-ConnectionString.cs" />
+    <Compile Include="TSqlDatabase\TSqlDatabase-Open-Close.cs" />
+    <Compile Include="TSqlDatabase\TSqlDatabase-Records.cs" />
+    <Compile Include="TSqlDatabase\TSqlDatabase-Events.cs" />
+    <Compile Include="TSqlDatabase\TSqlDatabase-Constants-DefaultValues.cs" />
+    <Compile Include="TSqlDatabase\TSqlDatabase.cs" />
     <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlHelper.cs" />
-    <Compile Include="Schema\SqlIndex.cs" />
-    <Compile Include="Schema\SqlIndexCollection.cs" />
-    <Compile Include="Schema\SqlIndexColumn.cs" />
-    <Compile Include="Schema\SqlIndexColumnCollection.cs" />
-    <Compile Include="Enums\SqlIndexColumnSortDirectionEnum.cs" />
-    <Compile Include="Schema\SqlSchema.cs" />
-    <Compile Include="TSqlServer.cs" />
-    <Compile Include="Schema\SqlTable.cs" />
-    <Compile Include="Schema\SqlTableCollection.cs" />
     <Compile Include="TSqlTransaction.cs" />
   </ItemGroup>
   <ItemGroup>

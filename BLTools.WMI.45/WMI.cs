@@ -7,7 +7,7 @@ using System.Management;
 using System.Collections;
 using System.Globalization;
 
-namespace BLTools.Hardware {
+namespace BLTools.WMI {
   public class WMI {
 
     #region Public properties
