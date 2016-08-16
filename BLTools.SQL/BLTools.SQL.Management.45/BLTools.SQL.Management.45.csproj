@@ -69,12 +69,17 @@
     <Compile Include="TSqlDatabase-Schema.cs" />
     <Compile Include="TSqlDatabase-Management.cs" />
     <Compile Include="TSqlDatabase-Backup-Restore.cs" />
+    <Compile Include="TSqlDatabaseManager.cs" />
     <Compile Include="TSqlServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BLTools\BLTools.45\BLTools.45.csproj">
       <Project>{8386db52-3b96-4b57-a008-876c8722715d}</Project>
       <Name>BLTools.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLTools.SQL.45\BLTools.SQL.45.csproj">
+      <Project>{2cc0d703-5afd-4dcc-807c-d8bacae4dcb6}</Project>
+      <Name>BLTools.SQL.45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,9 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLTools.SQL;
+using Microsoft.SqlServer.Management.Smo;
+using System.Data;
 
-namespace BLTools.SQL {
-  public partial class TSqlDatabase {
+namespace BLTools.SQL.Management {
+  public partial class TSqlDatabaseManager : TSqlDatabase {
 
     #region Backup / restore
     public bool Backup(string backupFullName) {
@@ -154,7 +157,6 @@ namespace BLTools.SQL {
       return true;
     }
     #endregion Backup / restore
-
 
   }
 }

@@ -10,7 +10,7 @@ namespace BLTools {
   /// </summary>
   public class TimeStampTraceListener : TExtendedTraceListener {
 
-    public string LogFileName { get; set; }
+    //public string LogFileName { get; set; }
 
     #region Constructors
     static TimeStampTraceListener() {

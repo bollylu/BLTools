@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.SqlServer.Management.Smo;
 
-namespace BLTools.SQL {
+namespace BLTools.SQL.Management {
   public class SqlColumnCollection : List<SqlColumn>, IToXml {
 
     #region XML Tags

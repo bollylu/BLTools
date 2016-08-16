@@ -24,7 +24,7 @@ namespace BLTools.SQL {
     public static bool DebugMode = false;
 #endif
 
-    #region Public properties
+    #region --- Public properties ------------------------------------------------------------------------------
     /// <summary>
     /// Name of the database
     /// </summary>
@@ -33,6 +33,7 @@ namespace BLTools.SQL {
         return string.Format("{0}:{1}", ServerName ?? "", DatabaseName ?? "");
       }
     }
+
     /// <summary>
     /// Indicate whether the connection is opened or not
     /// </summary>
@@ -51,19 +52,13 @@ namespace BLTools.SQL {
     /// </summary>
     public SqlConnection Connection { get; private set; }
 
-
-    
-
     /// <summary>
     /// The underlying Transaction
     /// </summary>
     public SqlTransaction Transaction { get; private set; }
+    #endregion --- Public properties ---------------------------------------------------------------------------
 
-    #endregion Public properties
-
-    
-
-    #region Constructor(s)
+    #region --- Constructor(s) ---------------------------------------------------------------------------------
     /// <summary>
     /// Builds a database object based on default values
     /// </summary>
@@ -76,17 +71,20 @@ namespace BLTools.SQL {
       }
     }
 
+    /// <summary>
+    /// Builds a TDatabase object based on a given connection string
+    /// </summary>
+    /// <param name="connectionString">A standardized connection string</param>
     public TSqlDatabase(string connectionString) {
       InitConnection(ParseConnectionString(connectionString));
     }
-
-
 
     /// <summary>
     /// Builds a database object based on prodived server and database. User name and password are default values
     /// </summary>
     /// <param name="serverName">Name of the server to connect (SERVER or SERVER\INSTANCE). Use "(local)" for server on local machine</param>
     /// <param name="databaseName">Name of the database to open</param>
+    /// <param name="integratedSecurity">Indicates whether we use integrated security or not (default=false)</param>
     public TSqlDatabase(string serverName, string databaseName, bool integratedSecurity = false)
       : this(serverName, databaseName, DEFAULT_USERNAME, DEFAULT_PASSWORD) {
       UseIntegratedSecurity = integratedSecurity;
@@ -95,6 +93,7 @@ namespace BLTools.SQL {
         Password = "";
       }
     }
+
     /// <summary>
     /// Builds a database object based on provided server, database, user and password.
     /// </summary>
@@ -120,6 +119,10 @@ namespace BLTools.SQL {
       }
     }
 
+    /// <summary>
+    /// Create a new TSqlDatabase from a previous TSqlDatabase
+    /// </summary>
+    /// <param name="sqlDatabase">The TSqlDatabase to copy parameters from</param>
     public TSqlDatabase(TSqlDatabase sqlDatabase) {
       ConnectionTimeout = sqlDatabase.ConnectionTimeout;
       UsePooledConnections = sqlDatabase.UsePooledConnections;
@@ -130,18 +133,31 @@ namespace BLTools.SQL {
       Password = sqlDatabase.Password;
       UseIntegratedSecurity = sqlDatabase.UseIntegratedSecurity;
     }
+
+    /// <summary>
+    /// Implements IDisposable
+    /// </summary>
     public virtual void Dispose() {
       if (IsOpened) {
         TryClose();
       }
-    }
-    #endregion Constructor(s)
+    } 
+    #endregion --- Constructor(s) ------------------------------------------------------------------------------
 
     #region Converters
+    /// <summary>
+    /// Convert to string
+    /// </summary>
+    /// <returns>The string representation of the object</returns>
     public override string ToString() {
       return ToString(true);
     }
-    public string ToString(bool hiddenPassword) {
+    /// <summary>
+    /// Convert to string
+    /// </summary>
+    /// <param name="hiddenPassword">When true, the password is obsfucated (default=true)</param>
+    /// <returns></returns>
+    public string ToString(bool hiddenPassword = true) {
       StringBuilder RetVal = new StringBuilder();
       RetVal.AppendFormat("Database \"{0}\" is {1}", Name, IsOpened ? "opened" : "closed");
       if (Transaction != null) {
@@ -161,8 +177,6 @@ namespace BLTools.SQL {
     #endregion Converters
 
     #region Public methods
-
-    
 
     #region Transactions
     public IDbTransaction StartTransaction() {
@@ -235,8 +249,6 @@ namespace BLTools.SQL {
     #endregion Transactions
 
     #endregion Public methods
-
-    
 
   }
 

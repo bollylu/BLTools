@@ -99,16 +99,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\BLTools.WPF\BLTools.WPF.40\BLTools.WPF.40.csproj">
-      <Project>{f999a816-bac0-4bcd-9e43-5b2991e4ccd3}</Project>
-      <Name>BLTools.WPF.40</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BLTools.40\BLTools.40.csproj">
-      <Project>{aabbd409-6f16-483c-9f96-308aff22e377}</Project>
-      <Name>BLTools.40</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

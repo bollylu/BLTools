@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using BLTools;
 using Microsoft.SqlServer.Management.Smo;
 
-namespace BLTools.SQL {
+namespace BLTools.SQL.Management {
   public class SqlColumn : IToXml {
 
     #region XML Tags

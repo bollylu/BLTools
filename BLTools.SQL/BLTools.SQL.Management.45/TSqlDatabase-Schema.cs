@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Management.Smo;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -6,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLTools.SQL {
-  public partial class TSqlDatabase {
+namespace BLTools.SQL.Management {
+  public partial class TSqlDatabaseManager : TSqlDatabase {
+
+    public SqlSchema Schema { get; set; }
 
     #region Schema
     public bool ReadSchema() {

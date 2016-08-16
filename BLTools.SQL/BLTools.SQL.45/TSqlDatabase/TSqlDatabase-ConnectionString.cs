@@ -134,12 +134,6 @@ namespace BLTools.SQL {
     }
     #endregion Connection string parameters
 
-    #region Private variables
-
-    
-    
-    #endregion Private variables
-
     #region Private methods
     private Dictionary<string, string> ParseConnectionString(string connectionString) {
       Dictionary<string, string> RetVal = new Dictionary<string, string>();

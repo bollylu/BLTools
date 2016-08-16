@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLTools.SQL {
-  public partial class TSqlDatabase {
+namespace BLTools.SQL.Management {
+  public partial class TSqlDatabaseManager : TSqlDatabase {
 
     #region Events
     public event EventHandler<BoolEventArgs> OnBackupCompleted;

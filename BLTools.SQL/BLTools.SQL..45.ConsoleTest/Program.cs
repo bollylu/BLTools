@@ -7,6 +7,8 @@ using BLTools.Data;
 using BLTools.SQL;
 using System.Diagnostics;
 using System.Data.SqlClient;
+using BLTools.SQL.Management;
+using System.Data;
 
 namespace SqlDbAccessConsoleTest {
   class Program {
@@ -19,10 +21,10 @@ namespace SqlDbAccessConsoleTest {
       //SqlDatabase.DefaultPassword = "welcome1$";
       TSqlDatabase.DefaultUsePooledConnections = true;
       //SqlDatabase NewDatabase = new SqlDatabase();
-      const string CONNECTION_STRING = "server=gnlieav1\\sqlexpress;database=derogation;username=sa;password=welcome1$";
+      const string CONNECTION_STRING = "server=(local);database=derogation;username=sa;password=welcome1$";
 
       try {
-        using (TSqlDatabase DerogationDatabase = new TSqlDatabase(CONNECTION_STRING)) {
+        using (TSqlDatabaseManager DerogationDatabase = new TSqlDatabaseManager(CONNECTION_STRING)) {
           if (DerogationDatabase.Exists()) {
             DerogationDatabase.Drop();
           }
@@ -44,7 +46,7 @@ namespace SqlDbAccessConsoleTest {
         foreach (string RecordItem in TestDB.SelectQuery<string>("SELECT Firstname FROM [User]", (R) => { return R.SafeRead<string>("FirstName", ""); })) {
           Trace.WriteLine(RecordItem);
         }
-        using (SqlTransaction Transaction = (SqlTransaction)TestDB.StartTransaction()) {
+        using (IDbTransaction Transaction = TestDB.StartTransaction()) {
           TestDB.ExecuteNonQuery(Transaction,
             new SqlCommand("INSERT INTO [User] (UserId, FirstName, LastName, Priviledge) VALUES (1,'Luc','Bolly','(none)'"),
             new SqlCommand("INSERT INTO [User] (UserId, FirstName, LastName, Priviledge) VALUES (2,'Herman','Bolly','(none)'")

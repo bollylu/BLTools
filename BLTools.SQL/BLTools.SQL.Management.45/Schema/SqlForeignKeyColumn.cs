@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BLTools.SQL {
+namespace BLTools.SQL.Management {
   public class SqlForeignKeyColumn {
 
     #region XML Tags

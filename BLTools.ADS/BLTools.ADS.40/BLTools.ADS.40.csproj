@@ -153,10 +153,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BLTools.Data\BLTools.Data.40\BLTools.Data.40.csproj">
-      <Project>{b0244724-94d4-4979-b340-a6303b69a2da}</Project>
-      <Name>BLTools.Data.40</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\BLTools\BLTools.40\BLTools.40.csproj">
       <Project>{aabbd409-6f16-483c-9f96-308aff22e377}</Project>
       <Name>BLTools.40</Name>

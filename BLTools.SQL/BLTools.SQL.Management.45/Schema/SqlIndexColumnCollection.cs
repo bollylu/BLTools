@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BLTools.SQL {
+namespace BLTools.SQL.Management {
   public class SqlIndexColumnCollection : List<SqlIndexColumn>, IToXml {
 
     #region XML Tags

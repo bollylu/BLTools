@@ -68,9 +68,9 @@ namespace UnitTest2015 {
       string name = "first";
       string value = "first value";
       ArgElement target = new ArgElement(id, name, value);
-      Assert.IsTrue(target.Id == 0, "Id should be be 0");
-      Assert.IsTrue(target.Name == name, "Name should be be {0}", name);
-      Assert.IsTrue(target.Value == value, "Value should be be {0}", value);
+      Assert.IsTrue(target.Id == 0, "Id should be 0");
+      Assert.IsTrue(target.Name == name, "Name should be {0}", name);
+      Assert.IsTrue(target.Value == value, "Value should be {0}", value);
     }
 
     /// <summary>

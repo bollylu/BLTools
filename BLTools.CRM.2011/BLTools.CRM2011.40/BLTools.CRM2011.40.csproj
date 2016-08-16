@@ -117,12 +117,6 @@
   <ItemGroup>
     <None Include="BLTools.CRM2011.40.snk" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\BLTools.DataModels.40\BLTools.DataModels.40.csproj">
-      <Project>{fa752d90-61db-487a-a5a2-9ca82c36ffda}</Project>
-      <Name>BLTools.DataModels.40</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if not exist c:\bin md c:\bin
