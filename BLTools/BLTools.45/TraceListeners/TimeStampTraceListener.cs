@@ -8,24 +8,21 @@ namespace BLTools {
   /// <summary>
   /// Act as a trace with timestamp in front of text values
   /// </summary>
-  public class TimeStampTraceListener : TExtendedTraceListener {
+  public class TimeStampTraceListener : TExtendedTraceListenerBase {
 
-    //public string LogFileName { get; set; }
+    /// <summary>
+    /// Defines the encoding used to write the log
+    /// </summary>
+    public Encoding ListenerEncoding { get; set; } = Encoding.Default;
 
     #region Constructors
-    static TimeStampTraceListener() {
-    }
-
-    public TimeStampTraceListener() : base() {
-    }
-
     /// <summary>
     /// Create a new TimeStampTraceListener using a filename. It can be named.
     /// </summary>
     /// <param name="filename">The name of the file that will contain the log (including path name)</param>
     /// <param name="name">The name of the TraceListener or empty for anonymous</param>
     public TimeStampTraceListener(string filename, string name = "")
-      : this() {
+      : base() {
       if (string.IsNullOrWhiteSpace(filename)) {
         throw new ArgumentNullException("Unable to create a TimeStampTraceListener with a null or empty filename");
       }
@@ -37,7 +34,7 @@ namespace BLTools {
           Directory.CreateDirectory(Pathname);
         }
       } catch (Exception ex) {
-        throw new ApplicationException(string.Format("Unable to create folder \"{0}\" for the trace system : {1}", filename, ex.Message), ex.InnerException);
+        throw new ApplicationException($"Unable to create folder \"{filename}\" for the trace system : {ex.Message}", ex.InnerException);
       }
 
       this.LogFileName = filename;
@@ -85,7 +82,7 @@ namespace BLTools {
         try {
           File.Delete(this.LogFileName);
         } catch (Exception ex) {
-          Trace.WriteLine(string.Format("Unable to ResetLog for {0} : {1}", LogFileName, ex.Message));
+          Trace.WriteLine($"Unable to ResetLog for {LogFileName} : {ex.Message}");
         }
       }
     }
@@ -95,7 +92,7 @@ namespace BLTools {
     /// A new log file will be created the first time a new log line is added
     /// </summary>
     public string Rollover() {
-      return Rollover(string.Format("{0}+{1}{2}", Path.GetFileNameWithoutExtension(this.LogFileName), DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss"), Path.GetExtension(this.LogFileName)));
+      return Rollover($"{Path.GetFileNameWithoutExtension(this.LogFileName)}+{DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss")}{Path.GetExtension(this.LogFileName)}");
     }
 
     /// <summary>
@@ -106,7 +103,7 @@ namespace BLTools {
     public string Rollover(string newName) {
       #region Validate parameters
       if (newName == null) {
-        string Msg = string.Format("Unable to rollover {0} because the new name is null", LogFileName);
+        string Msg = $"Unable to rollover {LogFileName} because the new name is null";
         Trace.WriteLine(Msg, Severity.Fatal);
         throw new ArgumentNullException("newName", Msg);
       }
@@ -117,7 +114,7 @@ namespace BLTools {
           File.Move(this.LogFileName, Destination);
           return Destination;
         } catch (Exception ex) {
-          Trace.WriteLine(string.Format("Unable to Rollover for \"{0}\" to \"{1}\" : {2}", LogFileName, newName, ex.Message));
+          Trace.WriteLine($"Unable to Rollover for \"{LogFileName}\" to \"{newName}\" : {ex.Message}");
           return null;
         }
       }

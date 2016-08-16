@@ -6,13 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BLTools {
-  public class TExtendedTraceListener : DefaultTraceListener{
+  /// <summary>
+  /// Add a timestamp, userid, computer in front of the log line
+  /// </summary>
+  public class TExtendedTraceListenerBase : DefaultTraceListener{
 
     #region Private variables
-    protected static string _UserId = Environment.UserDomainName == "" ? Environment.UserName : string.Format("{0}\\{1}", Environment.UserDomainName, Environment.UserName);
-    protected static string _Computer = Environment.MachineName;
-
-    protected static int _UserIdColSize;
+    internal static string _UserId = Environment.UserDomainName == "" ? Environment.UserName : $"{Environment.UserDomainName}\\{Environment.UserName}";
+    internal static string _Computer = Environment.MachineName;
+    
     /// <summary>
     /// If the userid column has to be displayed, indicate its size in chars (min = 8, max = 50)
     /// </summary>
@@ -24,7 +26,9 @@ namespace BLTools {
         _UserIdColSize = Math.Max(8, Math.Min(50, value));
       }
     }
-    protected static string _UserIdCol {
+    internal static int _UserIdColSize;
+
+    internal static string _UserIdColContent {
       get {
         if (_UserId.Length >= UserIdColSize) {
           return _UserId.Left(UserIdColSize);
@@ -34,7 +38,7 @@ namespace BLTools {
       }
     }
 
-    protected static int _ComputerColSize;
+    
     /// <summary>
     /// If the computer column has to be displayed, indicate its size in chars (min = 8, max = 50)
     /// </summary>
@@ -46,7 +50,9 @@ namespace BLTools {
         _ComputerColSize = Math.Max(8, Math.Min(50, value));
       }
     }
-    protected static string _ComputerCol {
+    internal static int _ComputerColSize;
+    
+    internal static string _ComputerColContent {
       get {
         if (_UserId.Length >= ComputerColSize) {
           return _Computer.Left(ComputerColSize);
@@ -56,9 +62,10 @@ namespace BLTools {
       }
     }
 
-    protected object syncIt = new object();
+    internal object syncIt = new object();
 
-    protected const char CRLF_REPLACEMENT = '\r';
+    internal const char CRLF_REPLACEMENT = '\r';
+
     #endregion Private variables
 
     #region Properties
@@ -72,20 +79,20 @@ namespace BLTools {
     /// </summary>
     public bool DisplayComputerName = false;
 
-    /// <summary>
-    /// Defines the encoding used to write the log
-    /// </summary>
-    public Encoding ListenerEncoding { get; set; }
+    
     #endregion Properties
 
     #region Constructors
-    static TExtendedTraceListener() {
+    static TExtendedTraceListenerBase() {
       UserIdColSize = 20;
       ComputerColSize = 20;
     }
 
-    public TExtendedTraceListener() : base() {
-      ListenerEncoding = Encoding.Default;
+    /// <summary>
+    /// Basic constructor
+    /// </summary>
+    public TExtendedTraceListenerBase() : base() {
+      
     }
     #endregion Constructors
 
@@ -129,11 +136,11 @@ namespace BLTools {
       RetVal.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
       if (DisplayComputerName) {
         RetVal.Append("|");
-        RetVal.Append(_ComputerCol);
+        RetVal.Append(_ComputerColContent);
       }
       if (DisplayUserId) {
         RetVal.Append("|");
-        RetVal.Append(_UserIdCol);
+        RetVal.Append(_UserIdColContent);
       }
       RetVal.Append("|");
       RetVal.Append(severity.PadRight(7, '.'));

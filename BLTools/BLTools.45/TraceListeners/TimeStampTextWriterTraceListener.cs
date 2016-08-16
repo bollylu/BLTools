@@ -8,22 +8,22 @@ namespace BLTools {
   /// <summary>
   /// Act as a trace with timestamp in front of text values
   /// </summary>
-  public class TimeStampTextWriterTraceListener : TExtendedTraceListener {
+  public class TimeStampTextWriterTraceListener : TExtendedTraceListenerBase {
 
-    public TextWriter Writer { get; set; }
+    /// <summary>
+    /// Textwriter used to log info
+    /// </summary>
+    public TextWriter Writer { get; private set; }
 
     #region Constructors
-    public TimeStampTextWriterTraceListener() : base() {
-    }
-
     /// <summary>
     /// Create a new TimeStampTextWriterTraceListener using a StreamWriter
     /// </summary>
     /// <param name="textWriter">The stream that will receive the log</param>
     /// <param name="name">The name of the TraceListener or empty for anonymous</param>
-    public TimeStampTextWriterTraceListener(TextWriter textWriter, string name = "") : this() {
+    public TimeStampTextWriterTraceListener(TextWriter textWriter, string name = "") : base() {
       if (textWriter == null) {
-        string Msg = string.Format("Unable to create a TimeStampTextWriterTraceListener with a null TextWriter");
+        string Msg = "Unable to create a TimeStampTextWriterTraceListener with a null TextWriter";
         Trace.WriteLine(Msg, Severity.Fatal);
         throw new ArgumentNullException("textWriter", Msg);
       }

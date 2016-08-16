@@ -239,7 +239,7 @@
     <Compile Include="TraceListeners\NullTraceListener.cs" />
     <Compile Include="TraceListeners\Severity.cs" />
     <Compile Include="TraceListeners\SyslogTraceListener.cs" />
-    <Compile Include="TraceListeners\TExtendedTraceListener.cs" />
+    <Compile Include="TraceListeners\TExtendedTraceListenerBase.cs" />
     <Compile Include="TraceListeners\TimeStampTextWriterTraceListener.cs" />
     <Compile Include="TraceListeners\TimeStampTraceListener.cs" />
   </ItemGroup>

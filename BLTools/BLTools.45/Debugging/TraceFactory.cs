@@ -49,8 +49,7 @@ namespace BLTools.Debugging {
     /// <param name="resetLog">True to reset the log before adding to the listeners</param>
     /// <param name="rollover">True to roll over the log before adding to the listeners</param>
     public static void AddTraceDefaultLogFilename(bool resetLog = false, bool rollover = false) {
-      AssemblyName StartupApplication = Assembly.GetEntryAssembly().GetName();
-      TimeStampTraceListener NewTraceListener = new TimeStampTraceListener(Path.Combine(DefaultLogLocation, string.Format("{0}.log", StartupApplication.Name)), "(default)");
+      TimeStampTraceListener NewTraceListener = new TimeStampTraceListener(GetTraceDefaultLogFilename(), "(default)");
       if (resetLog) {
         NewTraceListener.ResetLog();
       }
@@ -66,7 +65,7 @@ namespace BLTools.Debugging {
     /// <returns>The path and name of the default log file</returns>
     public static string GetTraceDefaultLogFilename() {
       AssemblyName StartupApplication = Assembly.GetEntryAssembly().GetName();
-      return Path.Combine(DefaultLogLocation, string.Format("{0}.log", StartupApplication.Name));
+      return Path.Combine(DefaultLogLocation, $"{StartupApplication.Name}.log");
     }
 
     /// <summary>
