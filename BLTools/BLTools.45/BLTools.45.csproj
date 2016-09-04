@@ -195,6 +195,7 @@
     <Compile Include="Extension methods\StringBuilderExtension.cs" />
     <Compile Include="Extension methods\XElementExtension.cs" />
     <Compile Include="FileManagement\ExtendedFileVersionInfo.cs" />
+    <Compile Include="MVVM\MVVMBase.cs" />
     <Compile Include="TChrono.cs" />
     <Compile Include="Text\TextBox.cs" />
     <Compile Include="EventArgs\BoolEventArgs.cs" />
@@ -265,6 +266,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="bltools.snk" />
+    <None Include="push-nuget.ps1" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
