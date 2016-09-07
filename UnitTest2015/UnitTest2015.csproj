@@ -68,6 +68,7 @@
     <Compile Include="Data\ReaderExtensionTest.cs" />
     <Compile Include="Data\TFixedLengthTestRecord.cs" />
     <Compile Include="Data\XElementExtensionTest.cs" />
+    <Compile Include="MVVM\NotificationTest.cs" />
     <Compile Include="Security\Asymmetric encryption\TRSACryptographyExtensionTest.cs" />
     <Compile Include="Security\Asymmetric encryption\TRSAEncryptorTest.cs" />
     <Compile Include="Security\Asymmetric encryption\TRSAKeyPairTest.cs" />

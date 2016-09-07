@@ -12,7 +12,7 @@ namespace BLTools.MVVM {
   /// <summary>
   /// Base class for a new MVVM class
   /// </summary>
-  public class MVVMBase : INotifyPropertyChanged {
+  public class MVVMBase : ObservableObject {
 
     /// <summary>
     /// Minimum level for tracing. If under the level, the callback is skipped
@@ -25,21 +25,6 @@ namespace BLTools.MVVM {
     }
     #endregion === Constructor(s) =================================================================
 
-    #region === INotifyPropertyChanged ============================================================
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void NotifyPropertyChanged(string propertyName) {
-      if (PropertyChanged != null) {
-        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-      }
-    }
-
-    public static event PropertyChangedEventHandler GlobalPropertyChanged;
-    protected static void GlobalNotifyPropertyChanged(string propertyName) {
-      if (GlobalPropertyChanged != null) {
-        GlobalPropertyChanged(null, new PropertyChangedEventArgs(propertyName));
-      }
-    }
-    #endregion === INotifyPropertyChanged =========================================================
 
     /// <summary>
     /// Indicates when an operation is in progress
@@ -52,7 +37,6 @@ namespace BLTools.MVVM {
         if (value != _WorkInProgress) {
           _WorkInProgress = value;
           NotifyPropertyChanged(nameof(WorkInProgress));
-          GlobalNotifyPropertyChanged(nameof(WorkInProgress));
         }
       }
     }
@@ -61,12 +45,7 @@ namespace BLTools.MVVM {
     /// </summary>
     protected bool _WorkInProgress;
 
-    #region === Events ============================================================================
-    /// <summary>
-    /// Indicates a change in operation status. Transmit a string.
-    /// </summary>
-    public static event EventHandler<StringEventArgs> OnExecutionStatus;
-
+    #region --- Progress bar ----------------------------------------------------------------------
     /// <summary>
     /// Request progress bar initialisation. Provides the maximum value
     /// </summary>
@@ -75,22 +54,11 @@ namespace BLTools.MVVM {
     /// Indicates progress bar change. Provides new current value
     /// </summary>
     public static event EventHandler<IntEventArgs> OnProgressBarNewValue;
+    /// <summary>
+    /// Indicates progress bar termination
+    /// </summary>
+    public static event EventHandler OnProgressBarCompleted;
 
-    /// <summary>
-    /// Indicates a change in operation progress. Provides a message and optionally a integer value
-    /// </summary>
-    public static event EventHandler<IntAndMessageEventArgs> OnExecutionProgress;
-    /// <summary>
-    /// Indicates that an operation is completed. Provides a bool to reflect the operation success and optionally a message
-    /// </summary>
-    public static event EventHandler<BoolAndMessageEventArgs> OnProgressCompleted;
-    /// <summary>
-    /// Indicates an error in operation progress. Provides a message and an errorlevel
-    /// </summary>
-    public static event EventHandler<IntAndMessageEventArgs> OnExecutionError;
-    #endregion === Events =========================================================================
-
-    #region --- Progress bar ----------------------------------------------------------------------
     /// <summary>
     /// Notify that a progress bar is to be reinitialised
     /// </summary>
@@ -119,14 +87,23 @@ namespace BLTools.MVVM {
     /// <param name="message">The optional message</param>
     /// <param name="status">The optional status (true/false)</param>
     protected virtual void NotifyProgressBarCompleted(string message = "", bool status = true) {
-      if (OnProgressCompleted == null) {
+      if (OnProgressBarCompleted == null) {
         return;
       }
-      OnProgressCompleted(this, new BoolAndMessageEventArgs(status, message));
+      OnProgressBarCompleted(this, EventArgs.Empty);
     }
     #endregion --- Progress bar ------------------------------------------------------------------
 
     #region --- Execution status ------------------------------------------------------------------
+    /// <summary>
+    /// Indicates a change in operation status. Transmit a string.
+    /// </summary>
+    public static event EventHandler<StringEventArgs> OnExecutionStatus;
+    /// <summary>
+    /// Indicates that an operation is completed. Provides a bool to reflect the operation success and optionally a message
+    /// </summary>
+    public static event EventHandler<BoolAndMessageEventArgs> OnExecutionCompleted;
+
     /// <summary>
     /// Sends an empty execution status to clear it
     /// </summary>
@@ -147,9 +124,26 @@ namespace BLTools.MVVM {
       }
       OnExecutionStatus(this, new StringEventArgs(statusMessage));
     }
+
+    /// <summary>
+    /// Sends an execution completed status message
+    /// </summary>
+    /// <param name="statusMessage">The message</param>
+    /// <param name="completionStatus">The status at the completion of the process</param>
+    protected virtual void NotifyExecutionCompleted(string statusMessage = "", bool completionStatus = false) {
+      if (OnExecutionCompleted == null) {
+        return;
+      }
+      OnExecutionCompleted(this, new BoolAndMessageEventArgs(completionStatus, statusMessage));
+    }
     #endregion --- Execution status ---------------------------------------------------------------
 
     #region --- Execution progress ----------------------------------------------------------------
+    /// <summary>
+    /// Indicates a change in operation progress. Provides a message and optionally a integer value
+    /// </summary>
+    public static event EventHandler<IntAndMessageEventArgs> OnExecutionProgress;
+
     /// <summary>
     /// Sends an empty execution progress message to clear it
     /// </summary>
@@ -187,6 +181,11 @@ namespace BLTools.MVVM {
     #endregion --- Execution progress -------------------------------------------------------------
 
     #region --- Execution error -------------------------------------------------------------------
+    /// <summary>
+    /// Indicates an error in operation progress. Provides a message and an errorlevel
+    /// </summary>
+    public static event EventHandler<IntAndMessageEventArgs> OnExecutionError;
+
     /// <summary>
     /// Sends an message to indicate an error
     /// </summary>

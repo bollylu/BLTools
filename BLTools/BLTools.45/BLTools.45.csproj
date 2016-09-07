@@ -196,6 +196,7 @@
     <Compile Include="Extension methods\XElementExtension.cs" />
     <Compile Include="FileManagement\ExtendedFileVersionInfo.cs" />
     <Compile Include="MVVM\MVVMBase.cs" />
+    <Compile Include="MVVM\ObservableObject.cs" />
     <Compile Include="TChrono.cs" />
     <Compile Include="Text\TextBox.cs" />
     <Compile Include="EventArgs\BoolEventArgs.cs" />
