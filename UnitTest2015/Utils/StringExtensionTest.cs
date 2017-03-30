@@ -1,7 +1,10 @@
 ﻿using BLTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.IO;
 using System.Security;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace UnitTest2015 {
 
@@ -277,6 +280,8 @@ namespace UnitTest2015 {
       Assert.IsFalse(SourceValue.ConvertToSecureString().IsEqualTo(actual));
     }
     #endregion SecureString
+
+    
 
   }
 }

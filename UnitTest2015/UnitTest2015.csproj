@@ -110,6 +110,7 @@
     <Compile Include="Utils\SplitArgsTest.cs" />
     <Compile Include="Utils\StringExtensionBuilderTest.cs" />
     <Compile Include="Utils\StringExtensionTest.cs" />
+    <Compile Include="Utils\ToMemoryStreamTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLTools.DataModels\BLTools.DataModels.45\BLTools.DataModels.45.csproj">

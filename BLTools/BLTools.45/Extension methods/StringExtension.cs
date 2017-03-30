@@ -22,11 +22,11 @@ namespace BLTools {
     /// <returns>A bool as represented by the string (default=false)</returns>
     public static bool ToBool(this string booleanString) {
       #region Validate parameters
-      if (booleanString == null) {
+      if ( booleanString == null ) {
         return false;
       }
       #endregion Validate parameters
-      switch (booleanString.Trim().ToLower()) {
+      switch ( booleanString.Trim().ToLower() ) {
         case "0":
         case "false":
         case "no":
@@ -52,7 +52,7 @@ namespace BLTools {
     /// <returns>A bool as represented by the string (default=false)</returns>
     public static bool ToBool(this string booleanString, string trueValue = "true", string falseValue = "false", bool isCaseSensitive = false) {
       #region Validate parameters
-      if (booleanString == null) {
+      if ( booleanString == null ) {
         return false;
       }
       #endregion Validate parameters
@@ -60,7 +60,7 @@ namespace BLTools {
       string ValueToCompare;
       string TrueValue;
       string FalseValue;
-      if (!isCaseSensitive) {
+      if ( !isCaseSensitive ) {
         ValueToCompare = booleanString.ToLower();
         TrueValue = trueValue.ToLower();
         FalseValue = falseValue.ToLower();
@@ -70,9 +70,9 @@ namespace BLTools {
         FalseValue = falseValue;
       }
 
-      if (ValueToCompare == TrueValue) {
+      if ( ValueToCompare == TrueValue ) {
         return true;
-      } else if (ValueToCompare == FalseValue) {
+      } else if ( ValueToCompare == FalseValue ) {
         return false;
       } else {
         Trace.WriteLine(string.Format("Error: value to convert doesn't match any possible value : \"{0}\", \"{1}\", \"{2}\"", TrueValue, FalseValue, ValueToCompare));
@@ -88,7 +88,7 @@ namespace BLTools {
     /// <returns>The array of bytes</returns>
     public static byte[] ToByteArray(this string sourceString) {
       #region Validate parameters
-      if (sourceString == null) {
+      if ( sourceString == null ) {
         return null;
       }
       #endregion Validate parameters
@@ -100,7 +100,7 @@ namespace BLTools {
     /// <param name="securePassword">The source SecureString</param>
     /// <returns>The string</returns>
     public static string ConvertToUnsecureString(this SecureString securePassword) {
-      if (securePassword == null) {
+      if ( securePassword == null ) {
         return null;
       }
 
@@ -119,11 +119,11 @@ namespace BLTools {
     /// <param name="unsecureString">The source string</param>
     /// <returns>The SecureString</returns>
     public static SecureString ConvertToSecureString(this string unsecureString) {
-      if (unsecureString == null) {
+      if ( unsecureString == null ) {
         return null;
       }
       SecureString RetVal = new SecureString();
-      foreach (char CharItem in unsecureString) {
+      foreach ( char CharItem in unsecureString ) {
         RetVal.AppendChar(CharItem);
       }
       RetVal.MakeReadOnly();
@@ -208,14 +208,14 @@ namespace BLTools {
     /// <returns>The selected portion of the string. If Length > Length of the string, returns the string.</returns>
     public static string Left(this string sourceString, int length) {
       #region Validate parameters
-      if (sourceString == null) {
+      if ( sourceString == null ) {
         return null;
       }
       #endregion Validate parameters
-      if (length < 0) {
+      if ( length < 0 ) {
         return sourceString;
       }
-      if (sourceString.Length >= length) {
+      if ( sourceString.Length >= length ) {
         return sourceString.Substring(0, length);
       } else {
         return sourceString;
@@ -230,16 +230,16 @@ namespace BLTools {
     /// <returns>The selected portion of the string. If Length > Length of the string, returns the string.</returns>
     public static string Right(this string sourceString, int length) {
       #region Validate parameters
-      if (sourceString == null) {
+      if ( sourceString == null ) {
         return null;
       }
       #endregion Validate parameters
 
-      if (length < 0) {
+      if ( length < 0 ) {
         return sourceString;
       }
-      
-      if (sourceString.Length >= length) {
+
+      if ( sourceString.Length >= length ) {
         return sourceString.Substring(sourceString.Length - length);
       } else {
         return sourceString;
@@ -252,14 +252,14 @@ namespace BLTools {
     /// <param name="sourceValue">The source string</param>
     /// <returns>The proper string</returns>
     public static string Proper(this string sourceValue) {
-      if (string.IsNullOrWhiteSpace(sourceValue)) {
+      if ( string.IsNullOrWhiteSpace(sourceValue) ) {
         return "";
       }
 
       StringBuilder RetVal = new StringBuilder();
 
       string[] Words = sourceValue.Split(' ');
-      foreach (string WordItem in Words) {
+      foreach ( string WordItem in Words ) {
         RetVal.AppendFormat("{0}{1} ", WordItem.Left(1).ToUpper(), WordItem.Substring(1).ToLower());
       }
       RetVal.Remove(RetVal.Length - 1, 1);
@@ -267,7 +267,7 @@ namespace BLTools {
       return RetVal.ToString();
     }
 
-   
+    
 
 
   }

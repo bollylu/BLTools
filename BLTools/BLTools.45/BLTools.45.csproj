@@ -193,6 +193,7 @@
     <Compile Include="Extension methods\PropertyInfoExtension.cs" />
     <Compile Include="Extension methods\SecureStringExtension.cs" />
     <Compile Include="Extension methods\StringBuilderExtension.cs" />
+    <Compile Include="Extension methods\ToMemoryStreamExtension.cs" />
     <Compile Include="Extension methods\XElementExtension.cs" />
     <Compile Include="FileManagement\ExtendedFileVersionInfo.cs" />
     <Compile Include="MVVM\MVVMBase.cs" />
