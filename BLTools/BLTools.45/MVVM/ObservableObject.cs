@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BLTools.MVVM {
+
+  /// <summary>
+  /// Enable a class to notify of property changed
+  /// </summary>
   public class ObservableObject : INotifyPropertyChanged {
 
     #region === INotifyPropertyChanged ============================================================
