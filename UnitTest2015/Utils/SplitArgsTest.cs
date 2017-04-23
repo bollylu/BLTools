@@ -62,7 +62,6 @@ namespace UnitTest2015 {
     //
     #endregion
 
-
     #region Tests for constructors
     /// <summary>
     ///Verifies the number of arguments from the command line
@@ -266,7 +265,10 @@ namespace UnitTest2015 {
     ///</summary>
     [TestMethod(), TestCategory("SplitArgs")]
     public void GetValue_KeyGenericFloat_IsTrue() {
-      IEnumerable<string> arrayOfValues = new List<string>() { "program.exe", string.Format("/par1=1236{0}23", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator), "/verbose" };
+      IEnumerable<string> arrayOfValues = new List<string>() { "program.exe",
+                                                               $"/par1=1236{CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator}23",
+                                                               "/verbose"
+                                                             };
       SplitArgs target = new SplitArgs(arrayOfValues);
       Assert.IsTrue(target.GetValue<float>("par1", 0) == 1236.23F, target.GetValue<float>("par1", 0).ToString());
     }
@@ -276,9 +278,12 @@ namespace UnitTest2015 {
     ///
     [TestMethod(), TestCategory("SplitArgs")]
     public void GetValue_KeyGenericDateTime_IsTrue() {
-      IEnumerable<string> arrayOfValues = new List<string>() { "program.exe", "/par1=12/6/1998", "/verbose" };
+      IEnumerable<string> arrayOfValues = new List<string>() { "program.exe",
+                                                               "/par1=12/6/1998",
+                                                               "/verbose" };
       SplitArgs target = new SplitArgs(arrayOfValues);
-      Assert.IsTrue(target.GetValue<DateTime>("par1", DateTime.MinValue) == new DateTime(1998, 6, 12), target.GetValue<DateTime>("par1", DateTime.MinValue).ToString());
+      Assert.IsTrue(target.GetValue<DateTime>("par1", DateTime.MinValue, CultureInfo.GetCultureInfo("FR-BE")) == new DateTime(1998, 6, 12),
+                    target.GetValue<DateTime>("par1", DateTime.MinValue).ToString());
     }
     #endregion Tests for GetValue<T>(key, default)
 
