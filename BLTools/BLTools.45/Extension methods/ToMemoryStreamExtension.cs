@@ -35,12 +35,8 @@ namespace BLTools {
         return new MemoryStream();
       }
       #endregion === Validate parameters ===
-      MemoryStream RetVal = new MemoryStream();
-      TextWriter Writer = new StreamWriter(RetVal, encoding);
-      Writer.Write(source);
-      Writer.Flush();
-      RetVal.Seek(0, SeekOrigin.Begin);
-      return RetVal;
+      
+      return encoding.GetBytes(source).ToStream();
     }
 
     /// <summary>
@@ -69,16 +65,12 @@ namespace BLTools {
         return await Task.FromResult<MemoryStream>(new MemoryStream());
       }
       #endregion === Validate parameters ===
-      MemoryStream RetVal = new MemoryStream();
-      TextWriter Writer = new StreamWriter(RetVal, encoding);
-      await Writer.WriteAsync(source);
-      await Writer.FlushAsync();
-      RetVal.Seek(0, SeekOrigin.Begin);
-      return RetVal;
+      
+      return await encoding.GetBytes(source).ToStreamAsync();
     }
     #endregion --- Gets MemoryStream from string --------------------------------------------
 
-    #region --- Gets MemoryStream from byte[] --------------------------------------------
+    #region --- Gets MemoryStream from IEnumerable<byte> --------------------------------------------
 
     /// <summary>
     /// Gets a MemoryStream from a byte[]
@@ -93,7 +85,7 @@ namespace BLTools {
       #endregion === Validate parameters ===
       MemoryStream RetVal;
       if ( sourceBytes is byte[] ) {
-        RetVal = new MemoryStream(sourceBytes as byte[]);
+        RetVal = new MemoryStream((byte[])sourceBytes);
       } else {
         RetVal = new MemoryStream(sourceBytes.ToArray());
       }
@@ -114,15 +106,15 @@ namespace BLTools {
       #endregion === Validate parameters ===
       MemoryStream RetVal = new MemoryStream();
       if ( sourceBytes is byte[] ) {
-        await RetVal.WriteAsync(sourceBytes as byte[], 0, sourceBytes.Count());
+        await RetVal.WriteAsync((byte[])sourceBytes, 0, ( (byte[])sourceBytes ).Count());
       } else {
         await RetVal.WriteAsync(sourceBytes.ToArray(), 0, sourceBytes.Count());
       }
       await RetVal.FlushAsync();
       RetVal.Seek(0, SeekOrigin.Begin);
       return RetVal;
-    } 
-    #endregion --- Gets MemoryStream from byte[] --------------------------------------------
+    }
+    #endregion --- Gets MemoryStream from IEnumerable<byte> --------------------------------------------
 
   }
 }
