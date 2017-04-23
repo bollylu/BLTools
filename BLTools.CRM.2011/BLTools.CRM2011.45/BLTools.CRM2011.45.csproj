@@ -44,14 +44,8 @@
     <AssemblyOriginatorKeyFile>BLTools.CRM2011.45.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Crm.Sdk">
-      <HintPath>C:\bin\libs\Microsoft.Crm.Sdk.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>C:\bin\libs\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk">
-      <HintPath>C:\bin\libs\Microsoft.Xrm.Sdk.dll</HintPath>
+    <Reference Include="microsoft.crm.sdk.proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Crm.Sdk.Proxy.2011.5.0.18\lib\net40\microsoft.crm.sdk.proxy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -88,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BLTools.CRM2011.45.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BLTools.DataModels\BLTools.DataModels.45\BLTools.DataModels.45.csproj">
