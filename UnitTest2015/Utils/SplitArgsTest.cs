@@ -350,7 +350,7 @@ namespace UnitTest2015 {
     public void GetValue_PosGenericDateTime_IsTrue() {
       IEnumerable<string> arrayOfValues = new List<string>() { "program.exe", "/par1=12/6/1998", "/verbose" };
       SplitArgs target = new SplitArgs(arrayOfValues);
-      Assert.IsTrue(target.GetValue<DateTime>(1, DateTime.MinValue) == new DateTime(1998, 6, 12));
+      Assert.IsTrue(target.GetValue<DateTime>(1, DateTime.MinValue, CultureInfo.GetCultureInfo("FR-BE")) == new DateTime(1998, 6, 12));
     }
     #endregion Tests for GetValue<T>(1, default)
 
@@ -387,7 +387,10 @@ namespace UnitTest2015 {
     ///</summary>
     [TestMethod(), TestCategory("SplitArgs")]
     public void GetValue_Pos3GenericDouble_IsTrue() {
-      IEnumerable<string> arrayOfValues = new List<string>() { "program.exe", string.Format("/par1=1236{0}2365", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator), "/verbose", string.Format("/par2=654789{0}123456", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator) };
+      IEnumerable<string> arrayOfValues = new List<string>() { "program.exe",
+                                                               $"/par1=1236{CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator}2365",
+                                                               "/verbose",
+                                                               $"/par2=654789{CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator}123456" };
       SplitArgs target = new SplitArgs(arrayOfValues);
       Assert.IsTrue(target.GetValue<double>(3, 0) == 654789.123456D);
     }
@@ -417,7 +420,7 @@ namespace UnitTest2015 {
     public void GetValue_Pos3GenericDateTime_IsTrue() {
       IEnumerable<string> arrayOfValues = new List<string>() { "program.exe", "/par1=12/6/1998", "/verbose", "/par2=28/04/1966" };
       SplitArgs target = new SplitArgs(arrayOfValues);
-      Assert.IsTrue(target.GetValue<DateTime>(3, DateTime.MinValue) == new DateTime(1966, 4, 28));
+      Assert.IsTrue(target.GetValue<DateTime>(3, DateTime.MinValue, CultureInfo.GetCultureInfo("FR-BE")) == new DateTime(1966, 4, 28));
     }
     #endregion Tests for GetValue<T>(3, default)
 
