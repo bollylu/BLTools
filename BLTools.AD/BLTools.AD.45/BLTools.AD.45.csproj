@@ -79,6 +79,9 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -108,11 +111,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if not exist c:\bin md c:\bin
-if not exist c:\bin\libs md c:\bin\libs
-if "$(PlatformName)"=="x64" copy "$(TargetPath)" c:\bin\libs\bltools.45.AD.x64.dll
-if "$(PlatformName)"=="x86" copy "$(TargetPath)" c:\bin\libs\bltools.45.AD.x86.dll
-if "$(PlatformName)"=="AnyCPU" copy "$(TargetPath)" c:\bin\libs</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
