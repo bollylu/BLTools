@@ -269,57 +269,6 @@ namespace BLTools.SQL {
       }
     }
 
-    //public virtual T ExecuteNonQuery<T>(params SqlCommand[] sqlCommands) where T : new() {
-    //  StringBuilder Status = new StringBuilder("Execute non query commands : ");
-
-    //  try {
-    //    Trace.Indent();
-
-    //    #region Validate parameters
-    //    if (sqlCommands == null) {
-    //      Trace.WriteLine("Unable to create a record from a null SqlCommand");
-    //      return default(T);
-    //    }
-    //    if (sqlCommands.Length == 0) {
-    //      Trace.WriteLine("Unable to create a record from an empty query list");
-    //      return default(T);
-    //    }
-    //    #endregion Validate parameters
-
-    //    Status.AppendFormat("{0} command(s)\r\n=> ", sqlCommands.Length);
-
-    //    try {
-
-    //      TryOpen();
-    //      StartTransaction();
-
-    //      foreach (SqlCommand SqlCommandItem in sqlCommands) {
-    //        SqlCommandItem.Connection = Connection;
-    //        SqlCommandItem.Transaction = Transaction;
-    //        if (SqlCommandItem.ExecuteScalar() == null) {
-    //          RollbackTransaction();
-    //          Status.AppendFormat("failed : {0}", SqlCommandItem.CommandText);
-    //          return default(T);
-    //        }
-    //      }
-
-    //      CommitTransaction();
-    //      Status.Append("successfull");
-
-    //    } catch (Exception ex) {
-    //      Status.AppendFormat("failed : {0}", ex.Message);
-    //      RollbackTransaction();
-    //      return default(T);
-
-    //    } finally {
-    //      TryClose();
-    //    }
-    //    return ;
-    //  } finally {
-    //    Trace.Unindent();
-    //    Trace.WriteLine(Status.ToString());
-    //  }
-    //}
     #endregion Records management
 
   }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,7 +63,7 @@ namespace BLTools.MVVM {
     }
 
     public override void Execute(object parameter) {
-      _ExecuteAction((T)parameter);
+      _ExecuteAction((T)BLTools.BLConverter.BLConvert<T>(parameter, CultureInfo.CurrentCulture, default(T)));
       NotifyCanExecuteChanged();
     }
   }
