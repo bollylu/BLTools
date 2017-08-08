@@ -179,6 +179,7 @@
   <ItemGroup>
     <Compile Include="TSqlDatabase\TSqlDatabase-ConnectionString.cs" />
     <Compile Include="TSqlDatabase\TSqlDatabase-Open-Close.cs" />
+    <Compile Include="TSqlDatabase\TSqlDatabase-Records-Async.cs" />
     <Compile Include="TSqlDatabase\TSqlDatabase-Records.cs" />
     <Compile Include="TSqlDatabase\TSqlDatabase-Events.cs" />
     <Compile Include="TSqlDatabase\TSqlDatabase-Constants-DefaultValues.cs" />
