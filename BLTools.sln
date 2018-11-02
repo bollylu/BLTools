@@ -107,6 +107,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLTools.SQL.45.ConsoleTest"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLTools.45.WPF.Test", "BLTools.WPF\BLTools.45.WPF.Test\BLTools.45.WPF.Test.csproj", "{83211135-6FDC-4278-B499-7DF14746DA07}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLTools.Json", "BLTools.Json", "{35D0B0FB-6A82-4617-B743-D98A9C65050E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLTools.45.Json", "BLTools.45.Json\BLTools.45.Json.csproj", "{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -968,6 +972,38 @@ Global
 		{83211135-6FDC-4278-B499-7DF14746DA07}.x86 debug|x64.Build.0 = Release|Any CPU
 		{83211135-6FDC-4278-B499-7DF14746DA07}.x86 debug|x86.ActiveCfg = Release|Any CPU
 		{83211135-6FDC-4278-B499-7DF14746DA07}.x86 debug|x86.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|x64.Build.0 = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Debug|x86.Build.0 = Debug|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|x64.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|x64.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|x86.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.Release|x86.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|Any CPU.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|Any CPU.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|Mixed Platforms.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|x64.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|x64.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|x86.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x64 debug|x86.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|Any CPU.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|Any CPU.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|Mixed Platforms.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|x64.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|x64.Build.0 = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|x86.ActiveCfg = Release|Any CPU
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}.x86 debug|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1005,6 +1041,10 @@ Global
 		{8E21447D-12EF-408E-867C-03E6748A28CC} = {1903831E-F1DF-43D7-8E29-663AF66427D0}
 		{B26A74BA-0C25-4D4E-93F3-7D4F35989A0A} = {1903831E-F1DF-43D7-8E29-663AF66427D0}
 		{83211135-6FDC-4278-B499-7DF14746DA07} = {A9ED500D-DBFD-4A71-90B2-F421470D3ADE}
+		{21647DE3-E5F1-4B22-A4CB-D45B59A29B12} = {35D0B0FB-6A82-4617-B743-D98A9C65050E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E2D7575-778C-43CD-A1DE-E90D342BB0DB}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = BLTools.vsmdi

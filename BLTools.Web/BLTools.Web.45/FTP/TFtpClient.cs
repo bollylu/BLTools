@@ -304,6 +304,7 @@ namespace BLTools.Web {
       return TransferOk;
 
     }
+
     public bool MoveFileFromFtp(string ftpPath = "", string ftpFilename = "", ETransferType transferType = ETransferType.Binary, string localPath = ".", string localFilename = "") {
       string LocalDestination = Path.Combine(localPath, localFilename);
 

@@ -190,13 +190,18 @@
     <Compile Include="ConsoleExtension\EInputYesNo.cs" />
     <Compile Include="EventArgs\ObjectEventArgs.cs" />
     <Compile Include="Extension methods\CharExtension.cs" />
+    <Compile Include="Extension methods\DictionnaryExtension.cs" />
     <Compile Include="Extension methods\FileInfoExtension.cs" />
     <Compile Include="Extension methods\PropertyInfoExtension.cs" />
     <Compile Include="Extension methods\SecureStringExtension.cs" />
     <Compile Include="Extension methods\StringBuilderExtension.cs" />
+    <Compile Include="Extension methods\StringExtensionConverters.cs" />
+    <Compile Include="Extension methods\StringExtensionTests.cs" />
     <Compile Include="Extension methods\ToMemoryStreamExtension.cs" />
     <Compile Include="Extension methods\XElementExtension.cs" />
     <Compile Include="FileManagement\ExtendedFileVersionInfo.cs" />
+    <Compile Include="Interfaces\IParent.cs" />
+    <Compile Include="Interfaces\IToXml.cs" />
     <Compile Include="MVVM\MVVMBase.cs" />
     <Compile Include="MVVM\ObservableObject.cs" />
     <Compile Include="MVVM\TRelayCommand.cs" />
@@ -214,7 +219,6 @@
     <Compile Include="Extension methods\IPAddressExtension.cs" />
     <Compile Include="Extension methods\StringExtension.cs" />
     <Compile Include="FileManagement\FileManager.cs" />
-    <Compile Include="IToXml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Authorization\TSecurityGroup.cs" />
     <Compile Include="Security\Authorization\TSecurityGroupCollection.cs" />

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21647DE3-E5F1-4B22-A4CB-D45B59A29B12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLTools.Json</RootNamespace>
+    <AssemblyName>BLTools.45.Json</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IToJson.cs" />
+    <Compile Include="Json.cs" />
+    <Compile Include="JsonPairs\IJsonPair.cs" />
+    <Compile Include="JsonPairs\JsonPair.cs" />
+    <Compile Include="JsonPairs\JsonPairCollection.cs" />
+    <Compile Include="JsonValues\IJsonValue.cs" />
+    <Compile Include="JsonValues\JsonArray.cs" />
+    <Compile Include="JsonValues\JsonBool.cs" />
+    <Compile Include="JsonValues\JsonDateTime.cs" />
+    <Compile Include="JsonValues\JsonDouble.cs" />
+    <Compile Include="JsonValues\JsonFloat.cs" />
+    <Compile Include="JsonValues\JsonInt.cs" />
+    <Compile Include="JsonValues\JsonLong.cs" />
+    <Compile Include="JsonValues\JsonNull.cs" />
+    <Compile Include="JsonValues\JsonObject.cs" />
+    <Compile Include="JsonValues\JsonString.cs" />
+    <Compile Include="JsonValues\JsonValue.cs" />
+    <Compile Include="JsonValues\JsonValueCollection.cs" />
+    <Compile Include="JsonWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLTools\BLTools.45\BLTools.45.csproj">
+      <Project>{8386db52-3b96-4b57-a008-876c8722715d}</Project>
+      <Name>BLTools.45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

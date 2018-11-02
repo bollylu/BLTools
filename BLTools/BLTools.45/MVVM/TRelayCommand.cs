@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace BLTools.MVVM {
@@ -39,7 +35,7 @@ namespace BLTools.MVVM {
     }
 
     public virtual void Execute(object parameter) {
-      //NotifyCanExecuteChanged();
+      NotifyCanExecuteChanged();
       _ExecuteAction();
       NotifyCanExecuteChanged();
     }
@@ -63,6 +59,7 @@ namespace BLTools.MVVM {
     }
 
     public override void Execute(object parameter) {
+      NotifyCanExecuteChanged();
       _ExecuteAction((T)BLTools.BLConverter.BLConvert<T>(parameter, CultureInfo.CurrentCulture, default(T)));
       NotifyCanExecuteChanged();
     }

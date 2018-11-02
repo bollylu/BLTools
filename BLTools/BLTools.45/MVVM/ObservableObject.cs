@@ -36,6 +36,8 @@ namespace BLTools.MVVM {
     //}
     #endregion === INotifyPropertyChanged =========================================================
 
-
   }
+
+  
+
 }

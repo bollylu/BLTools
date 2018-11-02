@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace BLTools.ConsoleExtension {
   static public partial class ConsoleExtension {
@@ -22,7 +19,7 @@ namespace BLTools.ConsoleExtension {
     /// <param name="timeout">The timeout if no key is pressed</param>
     /// <param name="isAnimated">Will animation run during the pause</param>
     /// <param name="displayTimeout">Display the timeout counter during the pause</param>
-    static public void Pause(string message, double timeout = 0, bool isAnimated = false, bool displayTimeout = false) {
+    static public async void Pause(string message, double timeout = 0, bool isAnimated = false, bool displayTimeout = false) {
 
       char[] Roll = new char[] { '|', '/', '-', '\\' };
 
@@ -47,7 +44,7 @@ namespace BLTools.ConsoleExtension {
             double ElapsedTime = (DateTime.Now - StartTime).TotalMilliseconds;
             Console.Write(TimeSpan.FromMilliseconds(timeout - ElapsedTime).ToString("hh\\:mm\\:ss\\:ff"));
           }
-          Thread.Sleep(200);
+          await Task.Delay(200);
         }
         if (Console.KeyAvailable) {
           Console.ReadKey(true);

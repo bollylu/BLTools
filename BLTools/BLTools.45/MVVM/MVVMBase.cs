@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using BLTools;
-using System.Diagnostics;
 
 namespace BLTools.MVVM {
   /// <summary>
@@ -18,13 +10,6 @@ namespace BLTools.MVVM {
     /// Minimum level for tracing. If under the level, the callback is skipped
     /// </summary>
     public static ErrorLevel MinTraceLevel = ErrorLevel.Info;
-
-    #region === Constructor(s) ====================================================================
-    static MVVMBase() {
-      MinTraceLevel = ErrorLevel.Warning;
-    }
-    #endregion === Constructor(s) =================================================================
-
 
     /// <summary>
     /// Indicates when an operation is in progress
@@ -40,6 +25,7 @@ namespace BLTools.MVVM {
         }
       }
     }
+
     /// <summary>
     /// Indicates when an operation is in progress
     /// </summary>
