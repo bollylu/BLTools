@@ -205,6 +205,7 @@
     <Compile Include="MVVM\MVVMBase.cs" />
     <Compile Include="MVVM\ObservableObject.cs" />
     <Compile Include="MVVM\TRelayCommand.cs" />
+    <Compile Include="SplitArgs\ISplitArgs.cs" />
     <Compile Include="TChrono.cs" />
     <Compile Include="Text\TextBox.cs" />
     <Compile Include="EventArgs\BoolEventArgs.cs" />

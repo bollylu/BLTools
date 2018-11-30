@@ -268,6 +268,23 @@ namespace BLTools {
       return sourceString.Left(Index);
     }
 
+    public static string Except(this string sourceString, string dataToRemove) {
+      #region Validate parameters
+      if ( sourceString == null ) {
+        return null;
+      }
+      if ( string.IsNullOrEmpty(dataToRemove) ) {
+        return sourceString;
+      }
+      #endregion Validate parameters
+
+      int Index = sourceString.IndexOf(dataToRemove);
+      if ( Index == 0 ) {
+        return sourceString;
+      }
+
+      return sourceString.Replace(dataToRemove, "");
+    }
 
     /// <summary>
     /// Gets the portion of the string after a given string

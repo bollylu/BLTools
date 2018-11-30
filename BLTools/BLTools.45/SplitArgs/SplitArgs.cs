@@ -11,7 +11,7 @@ namespace BLTools {
   /// If values are specified, they are separated from the keyword by an = sign.
   /// (c) 2004-2012 Luc Bolly
   /// </summary>
-  public class SplitArgs : List<ArgElement> {
+  public class SplitArgs : List<ArgElement>, ISplitArgs {
 
     #region Public static properties
     /// <summary>

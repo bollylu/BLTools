@@ -33,8 +33,8 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.45.1.*")]
-[assembly: AssemblyFileVersion("3.45.1")]
+[assembly: AssemblyVersion("3.45.2.*")]
+[assembly: AssemblyFileVersion("3.45.2")]
 [assembly: NeutralResourcesLanguageAttribute("en")]
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("BLToolsUnitTests, PublicKey=002400000480000094000000060200000024000052534131000400000100010093c8a660cf50f2f1f81d4b174aa8e787026609eab15b0cf4c5851f69839491e644489f331a036cd7be800463fb6e72c967f8c9a99be7b199d4918efb714eb99310a4e9d2c7c74b68fb9a1c5d8ed5a628d1691619c6cd0288097da591d2d6cce59fc11cddb6b584724fce8507d68d5b895297b07e74be5fd6265d031380c0259a")]
